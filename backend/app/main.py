@@ -1,16 +1,13 @@
-import os
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from backend.app.logging_mw import RequestLoggingMiddleware
-from backend.app.routers import health, prediksi, analisis, armada
+from backend.app.routers import prediksi, armada, mesin
 
 app = FastAPI(
     title="PrognoSense API",
-    description="API Layanan Monitoring & Prediksi Kesehatan Mesin",
-    version="1.0.0"
+    version="1.0.0",
+    description="API Layanan Monitoring & Prediksi Kesehatan Mesin"
 )
 
-# 1. Pasang Middleware CORS
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -19,15 +16,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# 2. Pasang Custom Middleware Logging (Persyaratan Orang 4)
-app.add_middleware(RequestLoggingMiddleware)
+@app.get("/health", tags=["Health"])
+def health_check():
+    return {"status": "ok"}
 
-# 3. Mendaftarkan Router Endpoints
-app.include_router(health.router, tags=["Health"])
-app.include_router(prediksi.router, prefix="/api", tags=["Prediksi"])
-app.include_router(analisis.router, prefix="/api", tags=["Analisis"])
+# Registrasi Router Sesuai Spesifikasi Dokumen
 app.include_router(armada.router, prefix="/api", tags=["Armada"])
-
-@app.get("/")
-def root():
-    return {"message": "PrognoSense API is running"}
+app.include_router(mesin.router, prefix="/api", tags=["Mesin & Analisis"])
+app.include_router(prediksi.router, prefix="/api", tags=["Prediksi"])
