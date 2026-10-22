@@ -1,0 +1,35 @@
+{
+  "batas_bin": [
+    10,
+    20,
+    35,
+    50,
+    80
+  ],
+  "label_bin": [
+    "<10",
+    "10-19",
+    "20-34",
+    "35-49",
+    "50-79",
+    ">=80"
+  ],
+  "n_tahap": 3,
+  "urutan_tahap": [
+    "sehat",
+    "menurun",
+    "kritis"
+  ],
+  "rumus_state": "bin * n_tahap + tahap",
+  "n_state": 18,
+  "aksi": [
+    "lanjut",
+    "rawat"
+  ],
+  "biaya_rawat": 10,
+  "biaya_gagal": {
+    "50": 50,
+    "100": 100,
+    "200": 200
+  }
+}

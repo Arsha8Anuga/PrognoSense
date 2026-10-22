@@ -1,0 +1,19 @@
+{
+  "model_version": "v1",
+  "dibuat": "2026-10-22T11:08:36+07:00",
+  "python": "3.13.16",
+  "library": {
+    "scikit-learn": "1.6.1",
+    "lightgbm": "4.6.0",
+    "numpy": "2.1.3",
+    "pandas": "2.2.3",
+    "joblib": "1.6.0"
+  },
+  "model_rul": "LightGBM",
+  "metrik": {
+    "rul_rmse_test": 16.9,
+    "rul_mae_test": 12.29,
+    "rul_rmse_b": 15.69,
+    "silhouette_kondisi": 0.9996569223040664
+  }
+}
