@@ -1,0 +1,2341 @@
+{
+ "clustering": {
+  "k_kondisi": 6,
+  "silhouette_kondisi": 0.9996569223040664,
+  "k_kesehatan": 3,
+  "silhouette_kesehatan": 0.39000593776431786,
+  "pemilihan_k": [
+   {
+    "k": 2,
+    "wcss": 1089229.8734407686,
+    "silhouette": 0.6480842037231812
+   },
+   {
+    "k": 3,
+    "wcss": 174909.4353951101,
+    "silhouette": 0.8023282896557028
+   },
+   {
+    "k": 4,
+    "wcss": 60931.386009046226,
+    "silhouette": 0.8127014072584446
+   },
+   {
+    "k": 5,
+    "wcss": 21794.360588726562,
+    "silhouette": 0.9299657009749753
+   },
+   {
+    "k": 6,
+    "wcss": 0.03899860658916636,
+    "silhouette": 0.9996569223040664
+   },
+   {
+    "k": 7,
+    "wcss": 0.03113726961508825,
+    "silhouette": 0.8973526601211741
+   },
+   {
+    "k": 8,
+    "wcss": 0.025907674959325184,
+    "silhouette": 0.8310798260586846
+   },
+   {
+    "k": 9,
+    "wcss": 0.02128294610107373,
+    "silhouette": 0.7705765490620999
+   },
+   {
+    "k": 10,
+    "wcss": 0.01662622287712439,
+    "silhouette": 0.7029068380670104
+   }
+  ]
+ },
+ "rul": {
+  "model": [
+   {
+    "nama": "Baseline rata-rata",
+    "rmse_b": 41.24,
+    "mae_b": 36.43,
+    "rmse": 45.26,
+    "mae": 38.18,
+    "detik_latih": 0.0,
+    "detik_tebak_b": 0.0
+   },
+   {
+    "nama": "Regresi linear (Ridge)",
+    "rmse_b": 19.97,
+    "mae_b": 15.94,
+    "rmse": 22.02,
+    "mae": 18.42,
+    "detik_latih": 0.0,
+    "detik_tebak_b": 0.0
+   },
+   {
+    "nama": "kNN (k=15)",
+    "rmse_b": 17.16,
+    "mae_b": 11.42,
+    "rmse": 19.13,
+    "mae": 14.05,
+    "detik_latih": 0.0,
+    "detik_tebak_b": 8.2
+   },
+   {
+    "nama": "Random Forest",
+    "rmse_b": 15.81,
+    "mae_b": 10.54,
+    "rmse": 16.47,
+    "mae": 12.08,
+    "detik_latih": 211.0,
+    "detik_tebak_b": 0.3
+   },
+   {
+    "nama": "LightGBM",
+    "rmse_b": 15.69,
+    "mae_b": 10.5,
+    "rmse": 16.9,
+    "mae": 12.29,
+    "detik_latih": 7.1,
+    "detik_tebak_b": 0.7
+   }
+  ],
+  "terpilih": "LightGBM",
+  "dinilai_pada": "siklus terakhir tiap mesin test resmi FD002+FD004, RUL dipotong di 125",
+  "sebar": [
+   {
+    "rul_aktual": 18,
+    "rul_pred": 22.5
+   },
+   {
+    "rul_aktual": 79,
+    "rul_pred": 112.8
+   },
+   {
+    "rul_aktual": 106,
+    "rul_pred": 86.3
+   },
+   {
+    "rul_aktual": 110,
+    "rul_pred": 86.8
+   },
+   {
+    "rul_aktual": 15,
+    "rul_pred": 13.1
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 115.6
+   },
+   {
+    "rul_aktual": 6,
+    "rul_pred": 6.9
+   },
+   {
+    "rul_aktual": 90,
+    "rul_pred": 65.7
+   },
+   {
+    "rul_aktual": 11,
+    "rul_pred": 16.1
+   },
+   {
+    "rul_aktual": 79,
+    "rul_pred": 108.0
+   },
+   {
+    "rul_aktual": 6,
+    "rul_pred": 12.0
+   },
+   {
+    "rul_aktual": 73,
+    "rul_pred": 107.1
+   },
+   {
+    "rul_aktual": 30,
+    "rul_pred": 47.1
+   },
+   {
+    "rul_aktual": 11,
+    "rul_pred": 8.2
+   },
+   {
+    "rul_aktual": 37,
+    "rul_pred": 49.4
+   },
+   {
+    "rul_aktual": 67,
+    "rul_pred": 101.6
+   },
+   {
+    "rul_aktual": 68,
+    "rul_pred": 89.0
+   },
+   {
+    "rul_aktual": 99,
+    "rul_pred": 122.7
+   },
+   {
+    "rul_aktual": 22,
+    "rul_pred": 21.8
+   },
+   {
+    "rul_aktual": 54,
+    "rul_pred": 72.3
+   },
+   {
+    "rul_aktual": 97,
+    "rul_pred": 68.8
+   },
+   {
+    "rul_aktual": 10,
+    "rul_pred": 11.6
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 117.3
+   },
+   {
+    "rul_aktual": 77,
+    "rul_pred": 70.5
+   },
+   {
+    "rul_aktual": 88,
+    "rul_pred": 81.9
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 110.7
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 120.7
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 124.5
+   },
+   {
+    "rul_aktual": 83,
+    "rul_pred": 96.8
+   },
+   {
+    "rul_aktual": 78,
+    "rul_pred": 76.4
+   },
+   {
+    "rul_aktual": 75,
+    "rul_pred": 105.5
+   },
+   {
+    "rul_aktual": 11,
+    "rul_pred": 19.3
+   },
+   {
+    "rul_aktual": 53,
+    "rul_pred": 48.6
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 123.5
+   },
+   {
+    "rul_aktual": 63,
+    "rul_pred": 69.2
+   },
+   {
+    "rul_aktual": 100,
+    "rul_pred": 78.2
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 121.5
+   },
+   {
+    "rul_aktual": 55,
+    "rul_pred": 58.6
+   },
+   {
+    "rul_aktual": 48,
+    "rul_pred": 35.8
+   },
+   {
+    "rul_aktual": 37,
+    "rul_pred": 30.2
+   },
+   {
+    "rul_aktual": 44,
+    "rul_pred": 37.9
+   },
+   {
+    "rul_aktual": 27,
+    "rul_pred": 25.6
+   },
+   {
+    "rul_aktual": 18,
+    "rul_pred": 28.4
+   },
+   {
+    "rul_aktual": 6,
+    "rul_pred": 5.5
+   },
+   {
+    "rul_aktual": 15,
+    "rul_pred": 14.8
+   },
+   {
+    "rul_aktual": 112,
+    "rul_pred": 119.1
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 104.0
+   },
+   {
+    "rul_aktual": 13,
+    "rul_pred": 27.2
+   },
+   {
+    "rul_aktual": 122,
+    "rul_pred": 112.0
+   },
+   {
+    "rul_aktual": 13,
+    "rul_pred": 9.7
+   },
+   {
+    "rul_aktual": 98,
+    "rul_pred": 125.3
+   },
+   {
+    "rul_aktual": 53,
+    "rul_pred": 37.0
+   },
+   {
+    "rul_aktual": 52,
+    "rul_pred": 54.7
+   },
+   {
+    "rul_aktual": 106,
+    "rul_pred": 104.3
+   },
+   {
+    "rul_aktual": 103,
+    "rul_pred": 88.4
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 118.0
+   },
+   {
+    "rul_aktual": 123,
+    "rul_pred": 122.0
+   },
+   {
+    "rul_aktual": 26,
+    "rul_pred": 23.8
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 125.2
+   },
+   {
+    "rul_aktual": 73,
+    "rul_pred": 86.3
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 109.3
+   },
+   {
+    "rul_aktual": 39,
+    "rul_pred": 37.8
+   },
+   {
+    "rul_aktual": 39,
+    "rul_pred": 72.6
+   },
+   {
+    "rul_aktual": 14,
+    "rul_pred": 15.1
+   },
+   {
+    "rul_aktual": 11,
+    "rul_pred": 12.4
+   },
+   {
+    "rul_aktual": 121,
+    "rul_pred": 111.8
+   },
+   {
+    "rul_aktual": 86,
+    "rul_pred": 80.5
+   },
+   {
+    "rul_aktual": 56,
+    "rul_pred": 41.4
+   },
+   {
+    "rul_aktual": 115,
+    "rul_pred": 117.4
+   },
+   {
+    "rul_aktual": 17,
+    "rul_pred": 18.5
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 120.9
+   },
+   {
+    "rul_aktual": 104,
+    "rul_pred": 85.2
+   },
+   {
+    "rul_aktual": 78,
+    "rul_pred": 72.9
+   },
+   {
+    "rul_aktual": 86,
+    "rul_pred": 109.4
+   },
+   {
+    "rul_aktual": 98,
+    "rul_pred": 97.0
+   },
+   {
+    "rul_aktual": 36,
+    "rul_pred": 48.8
+   },
+   {
+    "rul_aktual": 94,
+    "rul_pred": 114.6
+   },
+   {
+    "rul_aktual": 52,
+    "rul_pred": 61.3
+   },
+   {
+    "rul_aktual": 91,
+    "rul_pred": 76.4
+   },
+   {
+    "rul_aktual": 15,
+    "rul_pred": 14.8
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 110.6
+   },
+   {
+    "rul_aktual": 74,
+    "rul_pred": 83.4
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 123.4
+   },
+   {
+    "rul_aktual": 17,
+    "rul_pred": 26.0
+   },
+   {
+    "rul_aktual": 47,
+    "rul_pred": 50.0
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 103.7
+   },
+   {
+    "rul_aktual": 21,
+    "rul_pred": 22.4
+   },
+   {
+    "rul_aktual": 79,
+    "rul_pred": 77.1
+   },
+   {
+    "rul_aktual": 97,
+    "rul_pred": 108.9
+   },
+   {
+    "rul_aktual": 8,
+    "rul_pred": 9.8
+   },
+   {
+    "rul_aktual": 9,
+    "rul_pred": 10.0
+   },
+   {
+    "rul_aktual": 73,
+    "rul_pred": 93.6
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 104.7
+   },
+   {
+    "rul_aktual": 97,
+    "rul_pred": 76.5
+   },
+   {
+    "rul_aktual": 73,
+    "rul_pred": 95.3
+   },
+   {
+    "rul_aktual": 49,
+    "rul_pred": 31.8
+   },
+   {
+    "rul_aktual": 31,
+    "rul_pred": 21.4
+   },
+   {
+    "rul_aktual": 97,
+    "rul_pred": 65.1
+   },
+   {
+    "rul_aktual": 9,
+    "rul_pred": 12.0
+   },
+   {
+    "rul_aktual": 14,
+    "rul_pred": 17.8
+   },
+   {
+    "rul_aktual": 106,
+    "rul_pred": 123.0
+   },
+   {
+    "rul_aktual": 8,
+    "rul_pred": 3.1
+   },
+   {
+    "rul_aktual": 8,
+    "rul_pred": 4.7
+   },
+   {
+    "rul_aktual": 106,
+    "rul_pred": 90.6
+   },
+   {
+    "rul_aktual": 116,
+    "rul_pred": 116.1
+   },
+   {
+    "rul_aktual": 120,
+    "rul_pred": 114.1
+   },
+   {
+    "rul_aktual": 61,
+    "rul_pred": 51.8
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 122.7
+   },
+   {
+    "rul_aktual": 35,
+    "rul_pred": 43.1
+   },
+   {
+    "rul_aktual": 80,
+    "rul_pred": 74.7
+   },
+   {
+    "rul_aktual": 9,
+    "rul_pred": 17.6
+   },
+   {
+    "rul_aktual": 50,
+    "rul_pred": 77.0
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 123.7
+   },
+   {
+    "rul_aktual": 78,
+    "rul_pred": 76.7
+   },
+   {
+    "rul_aktual": 91,
+    "rul_pred": 57.3
+   },
+   {
+    "rul_aktual": 7,
+    "rul_pred": 5.2
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 120.4
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 93.7
+   },
+   {
+    "rul_aktual": 106,
+    "rul_pred": 87.7
+   },
+   {
+    "rul_aktual": 15,
+    "rul_pred": 28.2
+   },
+   {
+    "rul_aktual": 67,
+    "rul_pred": 113.8
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 122.0
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 115.3
+   },
+   {
+    "rul_aktual": 7,
+    "rul_pred": 3.4
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 107.4
+   },
+   {
+    "rul_aktual": 124,
+    "rul_pred": 94.7
+   },
+   {
+    "rul_aktual": 82,
+    "rul_pred": 61.5
+   },
+   {
+    "rul_aktual": 108,
+    "rul_pred": 84.7
+   },
+   {
+    "rul_aktual": 79,
+    "rul_pred": 87.7
+   },
+   {
+    "rul_aktual": 121,
+    "rul_pred": 88.7
+   },
+   {
+    "rul_aktual": 120,
+    "rul_pred": 114.3
+   },
+   {
+    "rul_aktual": 39,
+    "rul_pred": 49.9
+   },
+   {
+    "rul_aktual": 38,
+    "rul_pred": 46.2
+   },
+   {
+    "rul_aktual": 9,
+    "rul_pred": 7.5
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 115.9
+   },
+   {
+    "rul_aktual": 87,
+    "rul_pred": 94.9
+   },
+   {
+    "rul_aktual": 88,
+    "rul_pred": 103.9
+   },
+   {
+    "rul_aktual": 7,
+    "rul_pred": 1.6
+   },
+   {
+    "rul_aktual": 51,
+    "rul_pred": 48.5
+   },
+   {
+    "rul_aktual": 55,
+    "rul_pred": 60.2
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 114.8
+   },
+   {
+    "rul_aktual": 47,
+    "rul_pred": 26.6
+   },
+   {
+    "rul_aktual": 81,
+    "rul_pred": 93.7
+   },
+   {
+    "rul_aktual": 43,
+    "rul_pred": 43.9
+   },
+   {
+    "rul_aktual": 98,
+    "rul_pred": 108.0
+   },
+   {
+    "rul_aktual": 10,
+    "rul_pred": 18.7
+   },
+   {
+    "rul_aktual": 92,
+    "rul_pred": 97.2
+   },
+   {
+    "rul_aktual": 11,
+    "rul_pred": 13.1
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 116.8
+   },
+   {
+    "rul_aktual": 34,
+    "rul_pred": 40.9
+   },
+   {
+    "rul_aktual": 115,
+    "rul_pred": 98.4
+   },
+   {
+    "rul_aktual": 59,
+    "rul_pred": 85.6
+   },
+   {
+    "rul_aktual": 99,
+    "rul_pred": 89.6
+   },
+   {
+    "rul_aktual": 103,
+    "rul_pred": 114.3
+   },
+   {
+    "rul_aktual": 108,
+    "rul_pred": 113.6
+   },
+   {
+    "rul_aktual": 83,
+    "rul_pred": 121.1
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 121.1
+   },
+   {
+    "rul_aktual": 15,
+    "rul_pred": 20.4
+   },
+   {
+    "rul_aktual": 9,
+    "rul_pred": 7.9
+   },
+   {
+    "rul_aktual": 42,
+    "rul_pred": 37.1
+   },
+   {
+    "rul_aktual": 13,
+    "rul_pred": 19.1
+   },
+   {
+    "rul_aktual": 41,
+    "rul_pred": 61.4
+   },
+   {
+    "rul_aktual": 88,
+    "rul_pred": 66.9
+   },
+   {
+    "rul_aktual": 14,
+    "rul_pred": 14.8
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 118.7
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 102.7
+   },
+   {
+    "rul_aktual": 96,
+    "rul_pred": 108.7
+   },
+   {
+    "rul_aktual": 82,
+    "rul_pred": 90.9
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 105.8
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 101.9
+   },
+   {
+    "rul_aktual": 36,
+    "rul_pred": 27.1
+   },
+   {
+    "rul_aktual": 107,
+    "rul_pred": 91.6
+   },
+   {
+    "rul_aktual": 14,
+    "rul_pred": 11.5
+   },
+   {
+    "rul_aktual": 95,
+    "rul_pred": 120.5
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 117.9
+   },
+   {
+    "rul_aktual": 23,
+    "rul_pred": 26.2
+   },
+   {
+    "rul_aktual": 6,
+    "rul_pred": 5.6
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 118.0
+   },
+   {
+    "rul_aktual": 35,
+    "rul_pred": 38.9
+   },
+   {
+    "rul_aktual": 97,
+    "rul_pred": 87.6
+   },
+   {
+    "rul_aktual": 68,
+    "rul_pred": 57.4
+   },
+   {
+    "rul_aktual": 14,
+    "rul_pred": 12.3
+   },
+   {
+    "rul_aktual": 67,
+    "rul_pred": 59.2
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 122.4
+   },
+   {
+    "rul_aktual": 19,
+    "rul_pred": 14.4
+   },
+   {
+    "rul_aktual": 10,
+    "rul_pred": 12.0
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 109.2
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 99.5
+   },
+   {
+    "rul_aktual": 43,
+    "rul_pred": 48.1
+   },
+   {
+    "rul_aktual": 12,
+    "rul_pred": 10.5
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 84.6
+   },
+   {
+    "rul_aktual": 13,
+    "rul_pred": 19.6
+   },
+   {
+    "rul_aktual": 37,
+    "rul_pred": 38.4
+   },
+   {
+    "rul_aktual": 122,
+    "rul_pred": 122.2
+   },
+   {
+    "rul_aktual": 80,
+    "rul_pred": 56.3
+   },
+   {
+    "rul_aktual": 93,
+    "rul_pred": 110.8
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 123.3
+   },
+   {
+    "rul_aktual": 32,
+    "rul_pred": 75.9
+   },
+   {
+    "rul_aktual": 103,
+    "rul_pred": 119.1
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 115.7
+   },
+   {
+    "rul_aktual": 111,
+    "rul_pred": 122.7
+   },
+   {
+    "rul_aktual": 68,
+    "rul_pred": 91.3
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 115.8
+   },
+   {
+    "rul_aktual": 121,
+    "rul_pred": 123.7
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 125.1
+   },
+   {
+    "rul_aktual": 48,
+    "rul_pred": 56.7
+   },
+   {
+    "rul_aktual": 85,
+    "rul_pred": 68.0
+   },
+   {
+    "rul_aktual": 8,
+    "rul_pred": 12.6
+   },
+   {
+    "rul_aktual": 23,
+    "rul_pred": 54.7
+   },
+   {
+    "rul_aktual": 8,
+    "rul_pred": 3.9
+   },
+   {
+    "rul_aktual": 6,
+    "rul_pred": 2.9
+   },
+   {
+    "rul_aktual": 57,
+    "rul_pred": 86.1
+   },
+   {
+    "rul_aktual": 83,
+    "rul_pred": 64.6
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 112.1
+   },
+   {
+    "rul_aktual": 101,
+    "rul_pred": 104.8
+   },
+   {
+    "rul_aktual": 81,
+    "rul_pred": 85.4
+   },
+   {
+    "rul_aktual": 86,
+    "rul_pred": 120.0
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 125.5
+   },
+   {
+    "rul_aktual": 73,
+    "rul_pred": 86.4
+   },
+   {
+    "rul_aktual": 121,
+    "rul_pred": 120.3
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 114.6
+   },
+   {
+    "rul_aktual": 75,
+    "rul_pred": 46.8
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 125.3
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 125.1
+   },
+   {
+    "rul_aktual": 11,
+    "rul_pred": 8.0
+   },
+   {
+    "rul_aktual": 108,
+    "rul_pred": 79.3
+   },
+   {
+    "rul_aktual": 14,
+    "rul_pred": 4.8
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 115.4
+   },
+   {
+    "rul_aktual": 61,
+    "rul_pred": 72.0
+   },
+   {
+    "rul_aktual": 85,
+    "rul_pred": 112.2
+   },
+   {
+    "rul_aktual": 8,
+    "rul_pred": 8.2
+   },
+   {
+    "rul_aktual": 101,
+    "rul_pred": 60.1
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 122.0
+   },
+   {
+    "rul_aktual": 89,
+    "rul_pred": 89.7
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 100.3
+   },
+   {
+    "rul_aktual": 12,
+    "rul_pred": 19.4
+   },
+   {
+    "rul_aktual": 62,
+    "rul_pred": 56.0
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 120.4
+   },
+   {
+    "rul_aktual": 101,
+    "rul_pred": 92.8
+   },
+   {
+    "rul_aktual": 121,
+    "rul_pred": 120.6
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 124.2
+   },
+   {
+    "rul_aktual": 17,
+    "rul_pred": 12.8
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 119.5
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 120.8
+   },
+   {
+    "rul_aktual": 16,
+    "rul_pred": 9.1
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 97.8
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 111.8
+   },
+   {
+    "rul_aktual": 56,
+    "rul_pred": 56.8
+   },
+   {
+    "rul_aktual": 111,
+    "rul_pred": 122.4
+   },
+   {
+    "rul_aktual": 23,
+    "rul_pred": 11.7
+   },
+   {
+    "rul_aktual": 84,
+    "rul_pred": 115.1
+   },
+   {
+    "rul_aktual": 12,
+    "rul_pred": 7.9
+   },
+   {
+    "rul_aktual": 43,
+    "rul_pred": 37.5
+   },
+   {
+    "rul_aktual": 48,
+    "rul_pred": 48.2
+   },
+   {
+    "rul_aktual": 122,
+    "rul_pred": 111.0
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 114.3
+   },
+   {
+    "rul_aktual": 56,
+    "rul_pred": 62.5
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 110.9
+   },
+   {
+    "rul_aktual": 51,
+    "rul_pred": 72.8
+   },
+   {
+    "rul_aktual": 22,
+    "rul_pred": 46.0
+   },
+   {
+    "rul_aktual": 39,
+    "rul_pred": 65.6
+   },
+   {
+    "rul_aktual": 107,
+    "rul_pred": 97.0
+   },
+   {
+    "rul_aktual": 75,
+    "rul_pred": 121.2
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 105.4
+   },
+   {
+    "rul_aktual": 78,
+    "rul_pred": 93.4
+   },
+   {
+    "rul_aktual": 94,
+    "rul_pred": 117.6
+   },
+   {
+    "rul_aktual": 14,
+    "rul_pred": 12.3
+   },
+   {
+    "rul_aktual": 99,
+    "rul_pred": 82.3
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 125.5
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 116.7
+   },
+   {
+    "rul_aktual": 7,
+    "rul_pred": 12.0
+   },
+   {
+    "rul_aktual": 71,
+    "rul_pred": 58.8
+   },
+   {
+    "rul_aktual": 105,
+    "rul_pred": 91.8
+   },
+   {
+    "rul_aktual": 12,
+    "rul_pred": 36.8
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 114.8
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 109.3
+   },
+   {
+    "rul_aktual": 104,
+    "rul_pred": 88.7
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 124.8
+   },
+   {
+    "rul_aktual": 82,
+    "rul_pred": 79.3
+   },
+   {
+    "rul_aktual": 91,
+    "rul_pred": 94.9
+   },
+   {
+    "rul_aktual": 11,
+    "rul_pred": 10.3
+   },
+   {
+    "rul_aktual": 26,
+    "rul_pred": 41.2
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 78.9
+   },
+   {
+    "rul_aktual": 39,
+    "rul_pred": 70.2
+   },
+   {
+    "rul_aktual": 92,
+    "rul_pred": 96.3
+   },
+   {
+    "rul_aktual": 76,
+    "rul_pred": 55.9
+   },
+   {
+    "rul_aktual": 124,
+    "rul_pred": 124.8
+   },
+   {
+    "rul_aktual": 64,
+    "rul_pred": 105.6
+   },
+   {
+    "rul_aktual": 118,
+    "rul_pred": 112.4
+   },
+   {
+    "rul_aktual": 6,
+    "rul_pred": 9.5
+   },
+   {
+    "rul_aktual": 22,
+    "rul_pred": 44.9
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 117.9
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 108.9
+   },
+   {
+    "rul_aktual": 36,
+    "rul_pred": 35.2
+   },
+   {
+    "rul_aktual": 73,
+    "rul_pred": 88.9
+   },
+   {
+    "rul_aktual": 89,
+    "rul_pred": 54.7
+   },
+   {
+    "rul_aktual": 11,
+    "rul_pred": 12.4
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 89.6
+   },
+   {
+    "rul_aktual": 10,
+    "rul_pred": 24.5
+   },
+   {
+    "rul_aktual": 97,
+    "rul_pred": 122.0
+   },
+   {
+    "rul_aktual": 30,
+    "rul_pred": 17.3
+   },
+   {
+    "rul_aktual": 42,
+    "rul_pred": 73.4
+   },
+   {
+    "rul_aktual": 60,
+    "rul_pred": 34.4
+   },
+   {
+    "rul_aktual": 85,
+    "rul_pred": 91.6
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 122.6
+   },
+   {
+    "rul_aktual": 34,
+    "rul_pred": 38.3
+   },
+   {
+    "rul_aktual": 45,
+    "rul_pred": 60.4
+   },
+   {
+    "rul_aktual": 24,
+    "rul_pred": 29.6
+   },
+   {
+    "rul_aktual": 86,
+    "rul_pred": 113.8
+   },
+   {
+    "rul_aktual": 119,
+    "rul_pred": 122.0
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 124.3
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 117.4
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 101.3
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 122.5
+   },
+   {
+    "rul_aktual": 67,
+    "rul_pred": 101.2
+   },
+   {
+    "rul_aktual": 97,
+    "rul_pred": 110.7
+   },
+   {
+    "rul_aktual": 8,
+    "rul_pred": 7.0
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 123.8
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 117.1
+   },
+   {
+    "rul_aktual": 51,
+    "rul_pred": 27.4
+   },
+   {
+    "rul_aktual": 33,
+    "rul_pred": 54.8
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 121.5
+   },
+   {
+    "rul_aktual": 46,
+    "rul_pred": 73.7
+   },
+   {
+    "rul_aktual": 12,
+    "rul_pred": 23.6
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 91.3
+   },
+   {
+    "rul_aktual": 46,
+    "rul_pred": 45.4
+   },
+   {
+    "rul_aktual": 46,
+    "rul_pred": 54.3
+   },
+   {
+    "rul_aktual": 12,
+    "rul_pred": 14.2
+   },
+   {
+    "rul_aktual": 33,
+    "rul_pred": 44.7
+   },
+   {
+    "rul_aktual": 15,
+    "rul_pred": 27.5
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 121.1
+   },
+   {
+    "rul_aktual": 23,
+    "rul_pred": 29.4
+   },
+   {
+    "rul_aktual": 89,
+    "rul_pred": 100.6
+   },
+   {
+    "rul_aktual": 124,
+    "rul_pred": 103.0
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 123.2
+   },
+   {
+    "rul_aktual": 25,
+    "rul_pred": 56.5
+   },
+   {
+    "rul_aktual": 74,
+    "rul_pred": 78.6
+   },
+   {
+    "rul_aktual": 78,
+    "rul_pred": 82.8
+   },
+   {
+    "rul_aktual": 114,
+    "rul_pred": 77.8
+   },
+   {
+    "rul_aktual": 96,
+    "rul_pred": 120.4
+   },
+   {
+    "rul_aktual": 10,
+    "rul_pred": 15.6
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 96.1
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 119.5
+   },
+   {
+    "rul_aktual": 115,
+    "rul_pred": 111.4
+   },
+   {
+    "rul_aktual": 70,
+    "rul_pred": 52.8
+   },
+   {
+    "rul_aktual": 94,
+    "rul_pred": 101.6
+   },
+   {
+    "rul_aktual": 56,
+    "rul_pred": 88.0
+   },
+   {
+    "rul_aktual": 86,
+    "rul_pred": 83.8
+   },
+   {
+    "rul_aktual": 96,
+    "rul_pred": 68.5
+   },
+   {
+    "rul_aktual": 50,
+    "rul_pred": 36.9
+   },
+   {
+    "rul_aktual": 73,
+    "rul_pred": 89.3
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 117.9
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 120.8
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 78.4
+   },
+   {
+    "rul_aktual": 71,
+    "rul_pred": 83.7
+   },
+   {
+    "rul_aktual": 105,
+    "rul_pred": 118.8
+   },
+   {
+    "rul_aktual": 113,
+    "rul_pred": 117.9
+   },
+   {
+    "rul_aktual": 37,
+    "rul_pred": 45.5
+   },
+   {
+    "rul_aktual": 7,
+    "rul_pred": 11.1
+   },
+   {
+    "rul_aktual": 13,
+    "rul_pred": 16.4
+   },
+   {
+    "rul_aktual": 22,
+    "rul_pred": 22.2
+   },
+   {
+    "rul_aktual": 9,
+    "rul_pred": 15.3
+   },
+   {
+    "rul_aktual": 120,
+    "rul_pred": 124.8
+   },
+   {
+    "rul_aktual": 100,
+    "rul_pred": 67.4
+   },
+   {
+    "rul_aktual": 107,
+    "rul_pred": 58.8
+   },
+   {
+    "rul_aktual": 41,
+    "rul_pred": 79.0
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 108.8
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 123.0
+   },
+   {
+    "rul_aktual": 59,
+    "rul_pred": 60.1
+   },
+   {
+    "rul_aktual": 18,
+    "rul_pred": 26.2
+   },
+   {
+    "rul_aktual": 66,
+    "rul_pred": 94.6
+   },
+   {
+    "rul_aktual": 13,
+    "rul_pred": 19.1
+   },
+   {
+    "rul_aktual": 14,
+    "rul_pred": 26.6
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 109.1
+   },
+   {
+    "rul_aktual": 13,
+    "rul_pred": 15.1
+   },
+   {
+    "rul_aktual": 75,
+    "rul_pred": 109.2
+   },
+   {
+    "rul_aktual": 8,
+    "rul_pred": 31.7
+   },
+   {
+    "rul_aktual": 109,
+    "rul_pred": 53.5
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 107.1
+   },
+   {
+    "rul_aktual": 41,
+    "rul_pred": 36.3
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 119.4
+   },
+   {
+    "rul_aktual": 23,
+    "rul_pred": 35.0
+   },
+   {
+    "rul_aktual": 86,
+    "rul_pred": 81.2
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 125.0
+   },
+   {
+    "rul_aktual": 15,
+    "rul_pred": 19.2
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 118.7
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 116.7
+   },
+   {
+    "rul_aktual": 120,
+    "rul_pred": 114.4
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 89.2
+   },
+   {
+    "rul_aktual": 101,
+    "rul_pred": 101.4
+   },
+   {
+    "rul_aktual": 116,
+    "rul_pred": 81.8
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 122.6
+   },
+   {
+    "rul_aktual": 36,
+    "rul_pred": 52.9
+   },
+   {
+    "rul_aktual": 7,
+    "rul_pred": 14.2
+   },
+   {
+    "rul_aktual": 122,
+    "rul_pred": 113.3
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 93.3
+   },
+   {
+    "rul_aktual": 88,
+    "rul_pred": 78.1
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 120.2
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 103.5
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 124.5
+   },
+   {
+    "rul_aktual": 108,
+    "rul_pred": 122.1
+   },
+   {
+    "rul_aktual": 53,
+    "rul_pred": 64.6
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 124.2
+   },
+   {
+    "rul_aktual": 59,
+    "rul_pred": 82.8
+   },
+   {
+    "rul_aktual": 100,
+    "rul_pred": 122.0
+   },
+   {
+    "rul_aktual": 56,
+    "rul_pred": 87.8
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 116.3
+   },
+   {
+    "rul_aktual": 76,
+    "rul_pred": 75.8
+   },
+   {
+    "rul_aktual": 57,
+    "rul_pred": 48.0
+   },
+   {
+    "rul_aktual": 31,
+    "rul_pred": 22.3
+   },
+   {
+    "rul_aktual": 88,
+    "rul_pred": 98.8
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 96.0
+   },
+   {
+    "rul_aktual": 34,
+    "rul_pred": 31.1
+   },
+   {
+    "rul_aktual": 7,
+    "rul_pred": 12.6
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 123.5
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 116.5
+   },
+   {
+    "rul_aktual": 6,
+    "rul_pred": 7.0
+   },
+   {
+    "rul_aktual": 22,
+    "rul_pred": 17.1
+   },
+   {
+    "rul_aktual": 83,
+    "rul_pred": 106.6
+   },
+   {
+    "rul_aktual": 82,
+    "rul_pred": 117.4
+   },
+   {
+    "rul_aktual": 84,
+    "rul_pred": 93.2
+   },
+   {
+    "rul_aktual": 95,
+    "rul_pred": 101.2
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 126.3
+   },
+   {
+    "rul_aktual": 111,
+    "rul_pred": 121.0
+   },
+   {
+    "rul_aktual": 72,
+    "rul_pred": 112.0
+   },
+   {
+    "rul_aktual": 109,
+    "rul_pred": 119.0
+   },
+   {
+    "rul_aktual": 87,
+    "rul_pred": 109.9
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 125.8
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 122.7
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 82.0
+   },
+   {
+    "rul_aktual": 12,
+    "rul_pred": 30.0
+   },
+   {
+    "rul_aktual": 8,
+    "rul_pred": 3.5
+   },
+   {
+    "rul_aktual": 10,
+    "rul_pred": 16.0
+   },
+   {
+    "rul_aktual": 123,
+    "rul_pred": 68.8
+   },
+   {
+    "rul_aktual": 103,
+    "rul_pred": 99.3
+   },
+   {
+    "rul_aktual": 12,
+    "rul_pred": 23.2
+   },
+   {
+    "rul_aktual": 106,
+    "rul_pred": 114.3
+   },
+   {
+    "rul_aktual": 12,
+    "rul_pred": 14.4
+   },
+   {
+    "rul_aktual": 32,
+    "rul_pred": 16.6
+   },
+   {
+    "rul_aktual": 37,
+    "rul_pred": 20.0
+   },
+   {
+    "rul_aktual": 116,
+    "rul_pred": 107.8
+   },
+   {
+    "rul_aktual": 15,
+    "rul_pred": 13.4
+   },
+   {
+    "rul_aktual": 10,
+    "rul_pred": 8.6
+   },
+   {
+    "rul_aktual": 46,
+    "rul_pred": 61.5
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 122.2
+   },
+   {
+    "rul_aktual": 24,
+    "rul_pred": 47.0
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 102.2
+   },
+   {
+    "rul_aktual": 56,
+    "rul_pred": 112.7
+   },
+   {
+    "rul_aktual": 43,
+    "rul_pred": 67.4
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 122.6
+   },
+   {
+    "rul_aktual": 71,
+    "rul_pred": 64.2
+   },
+   {
+    "rul_aktual": 104,
+    "rul_pred": 94.9
+   },
+   {
+    "rul_aktual": 15,
+    "rul_pred": 19.5
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 119.5
+   },
+   {
+    "rul_aktual": 89,
+    "rul_pred": 119.0
+   },
+   {
+    "rul_aktual": 36,
+    "rul_pred": 43.2
+   },
+   {
+    "rul_aktual": 11,
+    "rul_pred": 9.6
+   },
+   {
+    "rul_aktual": 92,
+    "rul_pred": 47.7
+   },
+   {
+    "rul_aktual": 96,
+    "rul_pred": 79.5
+   },
+   {
+    "rul_aktual": 59,
+    "rul_pred": 102.9
+   },
+   {
+    "rul_aktual": 13,
+    "rul_pred": 10.1
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 123.9
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 120.7
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 87.5
+   },
+   {
+    "rul_aktual": 109,
+    "rul_pred": 90.6
+   },
+   {
+    "rul_aktual": 116,
+    "rul_pred": 91.8
+   },
+   {
+    "rul_aktual": 91,
+    "rul_pred": 85.9
+   },
+   {
+    "rul_aktual": 11,
+    "rul_pred": 15.0
+   },
+   {
+    "rul_aktual": 88,
+    "rul_pred": 82.2
+   },
+   {
+    "rul_aktual": 108,
+    "rul_pred": 119.2
+   },
+   {
+    "rul_aktual": 76,
+    "rul_pred": 88.6
+   },
+   {
+    "rul_aktual": 14,
+    "rul_pred": 22.0
+   },
+   {
+    "rul_aktual": 89,
+    "rul_pred": 83.4
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 113.8
+   },
+   {
+    "rul_aktual": 17,
+    "rul_pred": 19.9
+   },
+   {
+    "rul_aktual": 66,
+    "rul_pred": 63.0
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 119.6
+   },
+   {
+    "rul_aktual": 41,
+    "rul_pred": 40.1
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 122.1
+   },
+   {
+    "rul_aktual": 73,
+    "rul_pred": 79.1
+   },
+   {
+    "rul_aktual": 39,
+    "rul_pred": 52.4
+   },
+   {
+    "rul_aktual": 58,
+    "rul_pred": 48.7
+   },
+   {
+    "rul_aktual": 14,
+    "rul_pred": 15.0
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 123.4
+   },
+   {
+    "rul_aktual": 88,
+    "rul_pred": 113.5
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 123.6
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 122.1
+   },
+   {
+    "rul_aktual": 120,
+    "rul_pred": 125.5
+   },
+   {
+    "rul_aktual": 98,
+    "rul_pred": 115.5
+   },
+   {
+    "rul_aktual": 33,
+    "rul_pred": 52.5
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 130.3
+   },
+   {
+    "rul_aktual": 110,
+    "rul_pred": 101.6
+   },
+   {
+    "rul_aktual": 68,
+    "rul_pred": 44.2
+   },
+   {
+    "rul_aktual": 24,
+    "rul_pred": 36.2
+   },
+   {
+    "rul_aktual": 75,
+    "rul_pred": 85.5
+   },
+   {
+    "rul_aktual": 18,
+    "rul_pred": 17.4
+   },
+   {
+    "rul_aktual": 16,
+    "rul_pred": 9.9
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 125.4
+   },
+   {
+    "rul_aktual": 98,
+    "rul_pred": 30.8
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 121.2
+   },
+   {
+    "rul_aktual": 81,
+    "rul_pred": 96.2
+   },
+   {
+    "rul_aktual": 118,
+    "rul_pred": 120.1
+   },
+   {
+    "rul_aktual": 35,
+    "rul_pred": 40.1
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 123.4
+   },
+   {
+    "rul_aktual": 125,
+    "rul_pred": 125.5
+   },
+   {
+    "rul_aktual": 112,
+    "rul_pred": 95.1
+   },
+   {
+    "rul_aktual": 26,
+    "rul_pred": 39.7
+   }
+  ],
+  "importance": [
+   {
+    "fitur": "s11_mean10",
+    "nilai": 0.553
+   },
+   {
+    "fitur": "s17_mean10",
+    "nilai": 0.1188
+   },
+   {
+    "fitur": "cycle",
+    "nilai": 0.1026
+   },
+   {
+    "fitur": "s3_mean10",
+    "nilai": 0.045
+   },
+   {
+    "fitur": "s4_mean10",
+    "nilai": 0.0342
+   },
+   {
+    "fitur": "s8_mean10",
+    "nilai": 0.0273
+   },
+   {
+    "fitur": "s15_mean10",
+    "nilai": 0.0161
+   },
+   {
+    "fitur": "s14_mean10",
+    "nilai": 0.0128
+   },
+   {
+    "fitur": "s13_mean10",
+    "nilai": 0.0125
+   },
+   {
+    "fitur": "s9_mean10",
+    "nilai": 0.0108
+   }
+  ]
+ },
+ "rl": {
+  "kurva_reward": [],
+  "policy": [],
+  "strategi": [
+   {
+    "nama": "Ambang RUL",
+    "rasio": 50,
+    "parameter": {
+     "T": 20
+    },
+    "gagal_pct": 0.0,
+    "siklus_terbuang": 19.41,
+    "siklus_produktif": 211.19,
+    "biaya": 1020,
+    "n_mesin": 102,
+    "n_rawat": 102,
+    "n_gagal": 0
+   },
+   {
+    "nama": "Periodik",
+    "rasio": 50,
+    "parameter": {
+     "N": 140
+    },
+    "gagal_pct": 2.94,
+    "siklus_terbuang": 94.62,
+    "siklus_produktif": 138.76,
+    "biaya": 1140,
+    "n_mesin": 102,
+    "n_rawat": 99,
+    "n_gagal": 3
+   },
+   {
+    "nama": "Jalan sampai rusak",
+    "rasio": 50,
+    "parameter": {},
+    "gagal_pct": 100.0,
+    "siklus_terbuang": null,
+    "siklus_produktif": 230.6,
+    "biaya": 5100,
+    "n_mesin": 102,
+    "n_rawat": 0,
+    "n_gagal": 102
+   },
+   {
+    "nama": "Oracle (acuan)",
+    "rasio": 50,
+    "parameter": {},
+    "gagal_pct": 0.0,
+    "siklus_terbuang": 1.0,
+    "siklus_produktif": 229.6,
+    "biaya": 1020,
+    "n_mesin": 102,
+    "n_rawat": 102,
+    "n_gagal": 0
+   },
+   {
+    "nama": "Ambang RUL",
+    "rasio": 100,
+    "parameter": {
+     "T": 20
+    },
+    "gagal_pct": 0.0,
+    "siklus_terbuang": 19.41,
+    "siklus_produktif": 211.19,
+    "biaya": 1020,
+    "n_mesin": 102,
+    "n_rawat": 102,
+    "n_gagal": 0
+   },
+   {
+    "nama": "Periodik",
+    "rasio": 100,
+    "parameter": {
+     "N": 140
+    },
+    "gagal_pct": 2.94,
+    "siklus_terbuang": 94.62,
+    "siklus_produktif": 138.76,
+    "biaya": 1290,
+    "n_mesin": 102,
+    "n_rawat": 99,
+    "n_gagal": 3
+   },
+   {
+    "nama": "Jalan sampai rusak",
+    "rasio": 100,
+    "parameter": {},
+    "gagal_pct": 100.0,
+    "siklus_terbuang": null,
+    "siklus_produktif": 230.6,
+    "biaya": 10200,
+    "n_mesin": 102,
+    "n_rawat": 0,
+    "n_gagal": 102
+   },
+   {
+    "nama": "Oracle (acuan)",
+    "rasio": 100,
+    "parameter": {},
+    "gagal_pct": 0.0,
+    "siklus_terbuang": 1.0,
+    "siklus_produktif": 229.6,
+    "biaya": 1020,
+    "n_mesin": 102,
+    "n_rawat": 102,
+    "n_gagal": 0
+   },
+   {
+    "nama": "Ambang RUL",
+    "rasio": 200,
+    "parameter": {
+     "T": 20
+    },
+    "gagal_pct": 0.0,
+    "siklus_terbuang": 19.41,
+    "siklus_produktif": 211.19,
+    "biaya": 1020,
+    "n_mesin": 102,
+    "n_rawat": 102,
+    "n_gagal": 0
+   },
+   {
+    "nama": "Periodik",
+    "rasio": 200,
+    "parameter": {
+     "N": 140
+    },
+    "gagal_pct": 2.94,
+    "siklus_terbuang": 94.62,
+    "siklus_produktif": 138.76,
+    "biaya": 1590,
+    "n_mesin": 102,
+    "n_rawat": 99,
+    "n_gagal": 3
+   },
+   {
+    "nama": "Jalan sampai rusak",
+    "rasio": 200,
+    "parameter": {},
+    "gagal_pct": 100.0,
+    "siklus_terbuang": null,
+    "siklus_produktif": 230.6,
+    "biaya": 20400,
+    "n_mesin": 102,
+    "n_rawat": 0,
+    "n_gagal": 102
+   },
+   {
+    "nama": "Oracle (acuan)",
+    "rasio": 200,
+    "parameter": {},
+    "gagal_pct": 0.0,
+    "siklus_terbuang": 1.0,
+    "siklus_produktif": 229.6,
+    "biaya": 1020,
+    "n_mesin": 102,
+    "n_rawat": 102,
+    "n_gagal": 0
+   }
+  ],
+  "catatan": "Degradasi diputar ulang dari data; agen hanya menentukan kapan lintasan dihentikan. Biaya total tidak menghitung siklus produktif yang hilang, jadi bandingkan juga siklus terbuang dan produktif."
+ }
+}
