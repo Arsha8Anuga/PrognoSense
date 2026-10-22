@@ -1,13 +1,20 @@
 from fastapi import APIRouter
 
+from ..deps import baca_hasil, galat
+
 router = APIRouter()
 
-@router.get("/analisis/ringkasan")
-def get_ringkasan_analisis():
-    return {
-        "status": "success",
-        "total_mesin_dianalisis": 12,
-        "mesin_kritis": 2,
-        "rata_rata_rul": 45.5,
-        "unit": "siklus"
-    }
+
+def _file(nama):
+    data = baca_hasil(nama)
+    return data if data is not None else galat(500, 'data_tidak_ada', f'{nama} belum diekspor.')
+
+
+@router.get('/kondisi')
+def get_kondisi():
+    return _file('kondisi.json')
+
+
+@router.get('/evaluasi')
+def get_evaluasi():
+    return _file('evaluasi.json')

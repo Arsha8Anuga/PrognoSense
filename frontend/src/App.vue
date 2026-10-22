@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 
-const API_URL = 'http://127.0.0.1:8000'
+const API_URL = ''   // lewat nginx (/api, /health); dev: proxy Vite
 
 const backendOnline = ref(false)
 const apiStatusText = ref('Memeriksa server...')

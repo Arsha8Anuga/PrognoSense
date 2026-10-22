@@ -10,7 +10,8 @@ services:
       - "8000:8000"
     volumes:
       - ./logs:/app/logs
-      - ./models:/app/models
+      - ./models:/app/models:ro
+      - ./data/results:/app/data/results:ro
     restart: always
 
   frontend:

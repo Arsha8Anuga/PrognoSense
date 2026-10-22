@@ -1,61 +1,53 @@
-import pandas as pd
+"""Validasi CSV upload (Kontrak 2). Fungsi murni: tidak menulis file."""
 import numpy as np
+import pandas as pd
+
+KOLOM = ['unit', 'cycle', 'set1', 'set2', 'set3'] + [f's{i}' for i in range(1, 22)]
+AMBANG_KONDISI = 0.05
+MAKS_DETAIL = 20
+
 
 def validate(df: pd.DataFrame, bundle=None) -> dict:
-    """
-    Validasi dataframe CSV/TXT unggahan pengguna berdasarkan Kontrak 2.
-    """
-    errors = []
-    warnings = []
-    mesin_lolos = []
-    
-    # 1. Cek jumlah kolom (wajib 26)
-    if df.shape[1] != 26:
-        return {
-            "ok": False,
-            "mesin_lolos": [],
-            "error": [{"kode": "kolom_salah", "pesan": "Jumlah kolom tidak sesuai (harus 26 kolom)."}],
-            "peringatan": []
-        }
-    
-    # Standardisasi nama kolom
-    cols = ['unit', 'cycle', 'set1', 'set2', 'set3'] + [f's{i}' for i in range(1, 22)]
-    df.columns = cols
-    
-    # 2. Cek sel kosong atau bukan angka
-    if df.isnull().values.any():
-        errors.append({"kode": "nilai_kosong", "pesan": "Terdapat nilai kosong pada file."})
-        return {"ok": False, "mesin_lolos": [], "error": errors, "peringatan": warnings}
-        
-    for unit, group in df.groupby('unit'):
-        # Cek minimal 10 siklus
-        if len(group) < 10:
-            warnings.append({
-                "kode": "terlalu_pendek", 
-                "unit": str(unit), 
-                "pesan": f"Mesin {unit} kurang dari 10 siklus (minimal 10)."
-            })
+    """df: 26 kolom mentah dari file. Kembalikan ok, mesin_lolos, error, peringatan (Kontrak 5)."""
+    hasil = {'ok': False, 'mesin_lolos': [], 'error': [], 'peringatan': []}
+    if df.shape[1] != len(KOLOM):
+        hasil['error'].append({'kode': 'kolom_salah', 'pesan': f'File punya {df.shape[1]} kolom; harus {len(KOLOM)}.'})
+        return hasil
+    df = df.copy()
+    df.columns = KOLOM
+    kosong = df.isna()
+    df['unit'] = df['unit'].astype(str).str.strip()
+
+    angka = df.drop(columns='unit').apply(pd.to_numeric, errors='coerce')
+    bukan = angka.isna() & ~kosong.drop(columns='unit')
+    for kode, mask, pesan in [('nilai_kosong', kosong, 'Sel kosong.'), ('bukan_angka', bukan, 'Sel bukan angka.')]:
+        baris, kolom = np.nonzero(mask.to_numpy())
+        for b, k in list(zip(baris, kolom))[:MAKS_DETAIL]:
+            hasil['error'].append({'kode': kode, 'baris': int(b) + 1, 'kolom': mask.columns[k], 'pesan': pesan})
+    if hasil['error']:
+        return hasil
+
+    df[angka.columns] = angka
+    for unit, g in df.groupby('unit', sort=False):
+        siklus = g['cycle'].to_numpy()
+        if len(g) < 10:
+            hasil['peringatan'].append({'kode': 'terlalu_pendek', 'unit': unit,
+                                        'pesan': f'Mesin {unit} hanya punya {len(g)} siklus; minimal 10.'})
             continue
-            
-        # Cek urutan siklus (mulai dari 1 dan naik 1 per baris)
-        cycles = group['cycle'].values
-        if list(cycles) != list(range(1, len(cycles) + 1)):
-            warnings.append({
-                "kode": "siklus_tidak_urut", 
-                "unit": str(unit), 
-                "pesan": f"Siklus mesin {unit} tidak berurutan."
-            })
+        if not np.array_equal(siklus, np.arange(1, len(g) + 1)):
+            hasil['peringatan'].append({'kode': 'siklus_tidak_urut', 'unit': unit,
+                                        'pesan': f'Siklus mesin {unit} tidak mulai dari 1 atau melompat.'})
             continue
-            
-        mesin_lolos.append(str(unit))
-        
-    ok = len(mesin_lolos) > 0
-    if not ok:
-        errors.append({"kode": "csv_tidak_valid", "pesan": "Tidak ada mesin yang lolos validasi."})
-        
-    return {
-        "ok": ok,
-        "mesin_lolos": mesin_lolos,
-        "error": errors,
-        "peringatan": warnings
-    }
+        if bundle is not None:
+            jarak = bundle['kmeans_cond'].transform(g[['set1', 'set2', 'set3']]).min(axis=1)
+            if (jarak > AMBANG_KONDISI).any():
+                b = int(np.argmax(jarak > AMBANG_KONDISI))
+                hasil['peringatan'].append({'kode': 'kondisi_asing', 'unit': unit, 'baris': int(g.index[b]) + 1,
+                                            'pesan': 'Setting operasional di luar enam kondisi yang dikenal.'})
+                continue
+        hasil['mesin_lolos'].append(unit)
+
+    hasil['ok'] = bool(hasil['mesin_lolos'])
+    if not hasil['ok']:
+        hasil['error'].append({'kode': 'csv_tidak_valid', 'pesan': 'Tidak ada mesin yang lolos validasi.'})
+    return hasil
