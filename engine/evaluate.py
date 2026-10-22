@@ -127,3 +127,78 @@ def bandingkan(preds, rasio=100, qtable=None, bins=None):
         m = metrik(data_c, fn, rasio)
         hasil.append({"nama": nama, "rasio": rasio, "parameter": param, **m})
     return hasil
+
+
+# ---------- evaluasi.json (Kontrak 6: GET /api/evaluasi) ----------
+import json
+from pathlib import Path
+
+
+def _label_state(i, label_bin, urutan_tahap):
+    return f"{label_bin[i // len(urutan_tahap)]} · {urutan_tahap[i % len(urutan_tahap)]}"
+
+
+def tabel_policy(qtable, rl_config):
+    """18 baris: state, aksi terbaik, Q lanjut, Q rawat."""
+    q = np.asarray(qtable)
+    lb, ut = rl_config["label_bin"], rl_config["urutan_tahap"]
+    return [{"state": _label_state(i, lb, ut),
+             "aksi": "rawat" if q[i].argmax() == 1 else "lanjut",
+             "q_lanjut": round(float(q[i, 0]), 2),
+             "q_rawat": round(float(q[i, 1]), 2)} for i in range(len(q))]
+
+
+def susun_evaluasi(preds, rul_eval, kondisi, rl_config, model_dir="models/v1",
+                   kurva_reward=None):
+    """Gabungkan metrik clustering (Orang 1), regresi (Orang 2), dan RL (Orang 3)."""
+    model_dir = Path(model_dir)
+    strategi, policy = [], []
+    for r in RASIO:
+        qp = model_dir / f"qtable_r{r}.npy"
+        q = np.load(qp) if qp.exists() else None
+        strategi += bandingkan(preds, r, qtable=q, bins=rl_config["batas_bin"])
+        if q is not None and r == 100:
+            policy = tabel_policy(q, rl_config)
+    return {
+        "clustering": {
+            "k_kondisi": kondisi["k"],
+            "silhouette_kondisi": kondisi.get("silhouette_kondisi"),
+            "k_kesehatan": kondisi["kesehatan"]["k"],
+            "silhouette_kesehatan": kondisi["kesehatan"]["silhouette"],
+            "pemilihan_k": kondisi["pemilihan_k"],
+        },
+        "rul": {
+            "model": rul_eval["model"],
+            "terpilih": rul_eval["terpilih"],
+            "dinilai_pada": rul_eval["dinilai_pada"],
+            "sebar": rul_eval["sebar"],
+            "importance": rul_eval["importance"],
+        },
+        "rl": {
+            "kurva_reward": kurva_reward or [],
+            "policy": policy,
+            "strategi": strategi,
+            "catatan": ("Degradasi diputar ulang dari data; agen hanya menentukan kapan "
+                        "lintasan dihentikan. Biaya total tidak menghitung siklus produktif "
+                        "yang hilang, jadi bandingkan juga siklus terbuang dan produktif."),
+        },
+    }
+
+
+def tulis_evaluasi(data_dir="data/results", model_dir="models/v1", keluar=None):
+    d = Path(data_dir)
+    preds = pd.read_csv(d / "predictions.csv")
+    muat = lambda p: json.load(open(p, encoding="utf-8"))
+    kurva_p = d / "kurva_reward.json"
+    hasil = susun_evaluasi(
+        preds, muat(d / "rul_evaluasi.json"), muat(d / "kondisi.json"),
+        muat(Path(model_dir) / "rl_config.json"), model_dir,
+        muat(kurva_p) if kurva_p.exists() else None)
+    keluar = Path(keluar) if keluar else d / "evaluasi.json"
+    with open(keluar, "w", encoding="utf-8") as f:
+        json.dump(hasil, f, ensure_ascii=False, indent=1)
+    return keluar
+
+
+if __name__ == "__main__":
+    print("Tertulis:", tulis_evaluasi())
