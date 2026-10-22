@@ -1,5 +1,5 @@
-import pandas as pd
 import json
+import pandas as pd
 from .schema import KOLOM_ALL
 
 def load_and_format(filepath, prefix):
