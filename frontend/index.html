@@ -1,0 +1,1156 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrognoSense | Predictive Maintenance</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+        :root {
+            --bg: #f4f7fb;
+            --surface: #ffffff;
+            --navy: #101b32;
+            --navy-light: #1b2a46;
+            --primary: #0e9fbd;
+            --primary-dark: #087d98;
+            --text: #18243a;
+            --muted: #7a879b;
+            --border: #e7edf4;
+            --green: #16a36a;
+            --red: #dc4c55;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+        }
+
+        button, input {
+            font: inherit;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        .app {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* SIDEBAR */
+
+        .sidebar {
+            width: 250px;
+            background: var(--navy);
+            color: #fff;
+            padding: 28px 18px;
+            display: flex;
+            flex-direction: column;
+            flex-shrink: 0;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 0 10px;
+            margin-bottom: 42px;
+        }
+
+        .brand-icon {
+            width: 42px;
+            height: 42px;
+            display: grid;
+            place-items: center;
+            background: linear-gradient(135deg, #20c5dc, #087d98);
+            border-radius: 13px;
+            font-size: 23px;
+            font-weight: 800;
+        }
+
+        .brand h2 {
+            font-size: 19px;
+            letter-spacing: -0.7px;
+        }
+
+        .brand span {
+            display: block;
+            color: #8ea0bc;
+            font-size: 10px;
+            margin-top: 4px;
+            letter-spacing: 1.3px;
+        }
+
+        .nav-label {
+            padding: 0 12px;
+            color: #71829e;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            margin-bottom: 14px;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            padding: 13px 14px;
+            margin-bottom: 7px;
+            color: #a8b7ce;
+            border-radius: 10px;
+            font-size: 13px;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .nav-item:hover,
+        .nav-item.active {
+            background: var(--navy-light);
+            color: #fff;
+        }
+
+        .nav-item.active {
+            box-shadow: inset 3px 0 #24c1db;
+        }
+
+        .nav-icon {
+            width: 21px;
+            text-align: center;
+            font-size: 17px;
+        }
+
+        .sidebar-bottom {
+            margin-top: auto;
+            padding: 18px 14px;
+            border: 1px solid #2b3b56;
+            border-radius: 12px;
+        }
+
+        .sidebar-bottom p {
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .sidebar-bottom small {
+            color: #9aabc3;
+            line-height: 1.7;
+            font-size: 11px;
+        }
+
+        /* MAIN */
+
+        .main {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .topbar {
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            padding: 20px 34px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .breadcrumb {
+            font-size: 12px;
+            color: var(--muted);
+            margin-bottom: 6px;
+        }
+
+        .breadcrumb span {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .topbar h1 {
+            font-size: 20px;
+            letter-spacing: -0.6px;
+        }
+
+        .server-status {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            padding: 10px 14px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            background: #fff;
+            font-size: 12px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .status-dot {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: #e5a33c;
+            box-shadow: 0 0 0 4px #fff3d9;
+        }
+
+        .server-status.online .status-dot {
+            background: var(--green);
+            box-shadow: 0 0 0 4px #e2f7ed;
+        }
+
+        .server-status.offline .status-dot {
+            background: var(--red);
+            box-shadow: 0 0 0 4px #ffeaeb;
+        }
+
+        .content {
+            max-width: 1500px;
+            padding: 30px 34px;
+            margin: auto;
+        }
+
+        .welcome {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 26px;
+        }
+
+        .welcome h2 {
+            font-size: 25px;
+            letter-spacing: -1px;
+            margin-bottom: 9px;
+        }
+
+        .welcome p {
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.8;
+            max-width: 650px;
+        }
+
+        .date-label {
+            color: var(--muted);
+            background: white;
+            border: 1px solid var(--border);
+            padding: 10px 14px;
+            border-radius: 9px;
+            font-size: 12px;
+            white-space: nowrap;
+        }
+
+        /* SUMMARY CARDS */
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+            margin-bottom: 25px;
+        }
+
+        .stat-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 21px;
+            min-width: 0;
+            box-shadow: 0 3px 12px rgba(25, 43, 72, 0.025);
+        }
+
+        .stat-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 19px;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: var(--muted);
+            font-weight: 500;
+        }
+
+        .stat-icon {
+            width: 39px;
+            height: 39px;
+            display: grid;
+            place-items: center;
+            border-radius: 11px;
+            background: #e7f8fc;
+            color: #078aa8;
+            font-size: 19px;
+        }
+
+        .stat-card:nth-child(2) .stat-icon {
+            background: #e7f8ee;
+            color: #14945e;
+        }
+
+        .stat-card:nth-child(3) .stat-icon {
+            background: #fff2df;
+            color: #c78321;
+        }
+
+        .stat-value {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: -0.8px;
+            overflow-wrap: anywhere;
+        }
+
+        .stat-description {
+            color: var(--muted);
+            font-size: 11px;
+            margin-top: 8px;
+        }
+
+        /* PANELS */
+
+        .panel {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 22px;
+            box-shadow: 0 3px 12px rgba(25, 43, 72, 0.025);
+        }
+
+        .panel-heading {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 15px;
+            margin-bottom: 22px;
+        }
+
+        .panel-heading h3 {
+            font-size: 16px;
+            letter-spacing: -0.4px;
+            margin-bottom: 7px;
+        }
+
+        .panel-heading p {
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.7;
+        }
+
+        .step-badge {
+            flex-shrink: 0;
+            color: var(--primary-dark);
+            background: #e8f8fc;
+            padding: 7px 10px;
+            border-radius: 8px;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        /* UPLOAD */
+
+        .upload-area {
+            border: 1.5px dashed #b8c8d9;
+            background: #f8fbfe;
+            border-radius: 13px;
+            min-height: 220px;
+            padding: 28px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            transition: 0.2s;
+            cursor: pointer;
+        }
+
+        .upload-area:hover,
+        .upload-area.dragging {
+            border-color: var(--primary);
+            background: #effbfe;
+        }
+
+        .upload-icon {
+            width: 58px;
+            height: 58px;
+            display: grid;
+            place-items: center;
+            border-radius: 16px;
+            background: #e2f7fc;
+            color: var(--primary-dark);
+            font-size: 27px;
+            margin-bottom: 17px;
+        }
+
+        .upload-area h4 {
+            font-size: 14px;
+            margin-bottom: 9px;
+        }
+
+        .upload-area p {
+            font-size: 12px;
+            color: var(--muted);
+            line-height: 1.8;
+        }
+
+        .choose-file {
+            color: var(--primary-dark);
+            font-weight: 700;
+        }
+
+        .file-input {
+            display: none;
+        }
+
+        .file-info {
+            display: none;
+            align-items: center;
+            gap: 12px;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 11px;
+            padding: 14px;
+            margin-top: 16px;
+        }
+
+        .file-info.visible {
+            display: flex;
+        }
+
+        .file-icon {
+            width: 40px;
+            height: 40px;
+            display: grid;
+            place-items: center;
+            background: #e7f8ee;
+            border-radius: 9px;
+            color: #158b59;
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        .file-details {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .file-details strong {
+            display: block;
+            font-size: 12px;
+            overflow-wrap: anywhere;
+        }
+
+        .file-details small {
+            display: block;
+            color: var(--muted);
+            font-size: 11px;
+            margin-top: 5px;
+        }
+
+        .remove-file {
+            border: none;
+            background: transparent;
+            color: var(--red);
+            padding: 8px;
+            font-size: 18px;
+        }
+
+        .actions {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            margin-top: 22px;
+            flex-wrap: wrap;
+        }
+
+        .file-hint {
+            font-size: 11px;
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        .btn {
+            border: none;
+            border-radius: 9px;
+            padding: 13px 19px;
+            font-size: 12px;
+            font-weight: 700;
+            transition: 0.2s;
+        }
+
+        .btn-primary {
+            color: white;
+            background: var(--primary);
+            box-shadow: 0 4px 10px rgba(14, 159, 189, 0.16);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+        }
+
+        .btn:disabled {
+            opacity: 0.55;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* RESULT */
+
+        .result-panel {
+            display: none;
+        }
+
+        .result-panel.visible {
+            display: block;
+        }
+
+        .result-message {
+            display: none;
+            padding: 13px 15px;
+            border-radius: 9px;
+            font-size: 12px;
+            line-height: 1.7;
+            margin-bottom: 17px;
+        }
+
+        .result-message.error {
+            display: block;
+            color: #a72e37;
+            background: #fff0f0;
+            border: 1px solid #ffd9db;
+        }
+
+        .result-message.success {
+            display: block;
+            color: #116b47;
+            background: #eaf9f1;
+            border: 1px solid #c8efda;
+        }
+
+        .result-toolbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .result-toolbar span {
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        .btn-secondary {
+            border: 1px solid var(--border);
+            background: #fff;
+            color: var(--text);
+            padding: 9px 12px;
+            font-size: 11px;
+        }
+
+        .btn-secondary:hover {
+            background: #f4f8fb;
+        }
+
+        .output {
+            padding: 20px;
+            background: #111c31;
+            color: #bdeaf3;
+            border-radius: 11px;
+            font-family: Consolas, 'Courier New', monospace;
+            font-size: 12px;
+            line-height: 1.8;
+            white-space: pre-wrap;
+            overflow-wrap: anywhere;
+            overflow-x: auto;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+
+        .footer {
+            padding: 12px 0 25px;
+            color: #94a0b2;
+            font-size: 11px;
+            text-align: center;
+        }
+
+        @media (max-width: 1000px) {
+            .sidebar {
+                width: 205px;
+            }
+
+            .content {
+                padding: 25px 20px;
+            }
+
+            .topbar {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 720px) {
+            .sidebar {
+                display: none;
+            }
+
+            .topbar {
+                padding: 17px;
+            }
+
+            .topbar h1 {
+                font-size: 16px;
+            }
+
+            .server-status {
+                font-size: 10px;
+                padding: 9px;
+            }
+
+            .content {
+                padding: 22px 15px;
+            }
+
+            .welcome {
+                flex-direction: column;
+            }
+
+            .welcome h2 {
+                font-size: 22px;
+            }
+
+            .date-label {
+                white-space: normal;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .stat-card {
+                padding: 17px;
+            }
+
+            .stat-top {
+                margin-bottom: 12px;
+            }
+
+            .stat-value {
+                font-size: 22px;
+            }
+
+            .panel {
+                padding: 18px;
+            }
+
+            .panel-heading {
+                flex-direction: column;
+            }
+
+            .upload-area {
+                padding: 25px 13px;
+            }
+
+            .actions {
+                align-items: stretch;
+                flex-direction: column;
+            }
+
+            .actions .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div class="app">
+
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-icon">P</div>
+            <div>
+                <h2>PrognoSense</h2>
+                <span>INTELLIGENT INDUSTRY</span>
+            </div>
+        </div>
+
+        <div class="nav-label">MENU UTAMA</div>
+
+        <a href="#dashboard" class="nav-item active">
+            <span class="nav-icon">▦</span>
+            Dashboard
+        </a>
+
+        <a href="#upload" class="nav-item">
+            <span class="nav-icon">⇧</span>
+            Analisis Data
+        </a>
+
+        <a href="#results" class="nav-item">
+            <span class="nav-icon">▤</span>
+            Hasil Prediksi
+        </a>
+
+        <div class="sidebar-bottom">
+            <p>◈ Predictive Maintenance</p>
+            <small>
+                Sistem analisis untuk membantu
+                memperkirakan sisa umur operasional mesin.
+            </small>
+        </div>
+    </aside>
+
+    <main class="main" id="dashboard">
+
+        <header class="topbar">
+            <div>
+                <div class="breadcrumb">
+                    Workspace / <span>Dashboard</span>
+                </div>
+                <h1>Machine Health Monitoring</h1>
+            </div>
+
+            <div class="server-status" id="api-status">
+                <span class="status-dot"></span>
+                <span id="api-status-text">Memeriksa server...</span>
+            </div>
+        </header>
+
+        <div class="content">
+
+            <section class="welcome">
+                <div>
+                    <h2>Selamat Datang di PrognoSense 👋</h2>
+                    <p>
+                        Pantau kesehatan mesin dan lakukan prediksi
+                        Remaining Useful Life (RUL) menggunakan data
+                        sensor untuk mendukung pemeliharaan yang lebih
+                        terencana.
+                    </p>
+                </div>
+
+                <div class="date-label" id="current-date">
+                    Memuat tanggal...
+                </div>
+            </section>
+
+            <section class="stats">
+
+                <article class="stat-card">
+                    <div class="stat-top">
+                        <span class="stat-label">Status Backend</span>
+                        <div class="stat-icon">⌁</div>
+                    </div>
+                    <div class="stat-value" id="backend-stat">
+                        Memeriksa
+                    </div>
+                    <div class="stat-description">
+                        Koneksi ke server prediksi
+                    </div>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-top">
+                        <span class="stat-label">File Dataset</span>
+                        <div class="stat-icon">▤</div>
+                    </div>
+                    <div class="stat-value" id="file-stat">0</div>
+                    <div class="stat-description">
+                        File yang sedang dipilih
+                    </div>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-top">
+                        <span class="stat-label">Status Analisis</span>
+                        <div class="stat-icon">◷</div>
+                    </div>
+                    <div class="stat-value" id="analysis-stat">
+                        Belum ada
+                    </div>
+                    <div class="stat-description">
+                        Status proses prediksi terakhir
+                    </div>
+                </article>
+
+            </section>
+
+            <section class="panel" id="upload">
+
+                <div class="panel-heading">
+                    <div>
+                        <h3>Unggah Dataset Mesin</h3>
+                        <p>
+                            Masukkan data sensor untuk memulai
+                            proses analisis kesehatan mesin.
+                        </p>
+                    </div>
+                    <span class="step-badge">LANGKAH 01</span>
+                </div>
+
+                <div class="upload-area" id="drop-zone">
+                    <div class="upload-icon">⇧</div>
+                    <h4>Unggah dataset untuk dianalisis</h4>
+                    <p>
+                        Seret dan lepaskan file di sini, atau
+                        <span class="choose-file">pilih file</span>
+                        dari komputer.
+                    </p>
+                    <p style="margin-top: 8px;">
+                        Format yang didukung: CSV dan TXT
+                    </p>
+                    <input
+                        type="file"
+                        id="csvFile"
+                        class="file-input"
+                        accept=".csv,.txt,text/csv,text/plain"
+                    >
+                </div>
+
+                <div class="file-info" id="file-info">
+                    <div class="file-icon">FILE</div>
+                    <div class="file-details">
+                        <strong id="file-name">dataset.csv</strong>
+                        <small id="file-size">0 KB</small>
+                    </div>
+                    <button
+                        class="remove-file"
+                        id="remove-file"
+                        type="button"
+                        title="Hapus file"
+                        aria-label="Hapus file"
+                    >×</button>
+                </div>
+
+                <div class="actions">
+                    <div class="file-hint">
+                        Pastikan kolom dan format dataset sesuai
+                        dengan kebutuhan model prediksi.
+                    </div>
+
+                    <button
+                        class="btn btn-primary"
+                        id="predict-btn"
+                        type="button"
+                    >
+                        Jalankan Prediksi &nbsp; →
+                    </button>
+                </div>
+
+            </section>
+
+            <section class="panel result-panel" id="results">
+
+                <div class="panel-heading">
+                    <div>
+                        <h3>Hasil Analisis</h3>
+                        <p>
+                            Respons yang dikembalikan oleh backend
+                            setelah proses prediksi.
+                        </p>
+                    </div>
+                    <span class="step-badge">LANGKAH 02</span>
+                </div>
+
+                <div class="result-message" id="result-message"></div>
+
+                <div class="result-toolbar">
+                    <span id="result-label">Output API</span>
+                    <button
+                        class="btn btn-secondary"
+                        id="copy-btn"
+                        type="button"
+                    >
+                        Salin Hasil
+                    </button>
+                </div>
+
+                <pre class="output" id="output">Hasil prediksi akan ditampilkan di sini.</pre>
+
+            </section>
+
+            <footer class="footer">
+                PrognoSense © 2026 · Intelligent Machine Health Monitoring
+            </footer>
+
+        </div>
+    </main>
+</div>
+
+<script>
+    const API_URL = 'http://127.0.0.1:8000';
+
+    const fileInput = document.getElementById('csvFile');
+    const dropZone = document.getElementById('drop-zone');
+    const fileInfo = document.getElementById('file-info');
+    const fileName = document.getElementById('file-name');
+    const fileSize = document.getElementById('file-size');
+    const predictBtn = document.getElementById('predict-btn');
+
+    const resultPanel = document.getElementById('results');
+    const resultMessage = document.getElementById('result-message');
+    const output = document.getElementById('output');
+
+    let selectedFile = null;
+    let lastResult = null;
+    let requestNumber = 0;
+
+    // Tanggal dashboard
+    document.getElementById('current-date').textContent =
+        new Intl.DateTimeFormat('id-ID', {
+            weekday: 'long',
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric'
+        }).format(new Date());
+
+    // Memeriksa status backend
+    async function checkBackend() {
+        const statusBox = document.getElementById('api-status');
+        const statusText = document.getElementById('api-status-text');
+        const backendStat = document.getElementById('backend-stat');
+
+        try {
+            const response = await fetch(`${API_URL}/health`);
+
+            if (!response.ok) {
+                throw new Error('Server tidak merespons dengan baik');
+            }
+
+            const data = await response.json();
+
+            statusBox.classList.remove('offline');
+            statusBox.classList.add('online');
+
+            statusText.textContent =
+                'Backend: ' + String(data.status || 'Online').toUpperCase();
+
+            backendStat.textContent =
+                String(data.status || 'Online').toUpperCase();
+
+        } catch (error) {
+            statusBox.classList.remove('online');
+            statusBox.classList.add('offline');
+
+            statusText.textContent = 'Backend Offline';
+            backendStat.textContent = 'Offline';
+        }
+    }
+
+    checkBackend();
+
+    // Membuka file picker
+    dropZone.addEventListener('click', () => {
+        fileInput.click();
+    });
+
+    // Mencegah klik tombol file picker berulang
+    fileInput.addEventListener('click', event => {
+        event.stopPropagation();
+    });
+
+    // File dipilih dari komputer
+    fileInput.addEventListener('change', () => {
+        if (fileInput.files.length > 0) {
+            setSelectedFile(fileInput.files[0]);
+        }
+    });
+
+    // Drag and drop
+    dropZone.addEventListener('dragover', event => {
+        event.preventDefault();
+        dropZone.classList.add('dragging');
+    });
+
+    dropZone.addEventListener('dragleave', () => {
+        dropZone.classList.remove('dragging');
+    });
+
+    dropZone.addEventListener('drop', event => {
+        event.preventDefault();
+        dropZone.classList.remove('dragging');
+
+        const file = event.dataTransfer.files[0];
+
+        if (file) {
+            setSelectedFile(file);
+        }
+    });
+
+    function setSelectedFile(file) {
+        const extension = file.name.split('.').pop().toLowerCase();
+
+        if (!['csv', 'txt'].includes(extension)) {
+            alert('Format file tidak didukung. Gunakan CSV atau TXT.');
+            return;
+        }
+
+        selectedFile = file;
+        fileName.textContent = file.name;
+        fileSize.textContent = formatFileSize(file.size);
+
+        fileInfo.classList.add('visible');
+        document.getElementById('file-stat').textContent = '1';
+
+        document.getElementById('analysis-stat').textContent =
+            'Siap dianalisis';
+    }
+
+    function formatFileSize(bytes) {
+        if (bytes < 1024) return bytes + ' B';
+        if (bytes < 1024 * 1024) {
+            return (bytes / 1024).toFixed(1) + ' KB';
+        }
+        return (bytes / (1024 * 1024)).toFixed(2) + ' MB';
+    }
+
+    // Menghapus file terpilih
+    document.getElementById('remove-file').addEventListener('click', () => {
+        selectedFile = null;
+        fileInput.value = '';
+
+        fileInfo.classList.remove('visible');
+        document.getElementById('file-stat').textContent = '0';
+
+        document.getElementById('analysis-stat').textContent =
+            'Belum ada';
+    });
+
+    function showMessage(message, type) {
+        resultMessage.className = 'result-message ' + type;
+        resultMessage.textContent = message;
+    }
+
+    // Menjalankan prediksi
+    predictBtn.addEventListener('click', uploadData);
+
+    async function uploadData() {
+        if (!selectedFile) {
+            alert('Silakan pilih file CSV atau TXT terlebih dahulu.');
+            return;
+        }
+
+        const currentRequest = ++requestNumber;
+
+        predictBtn.disabled = true;
+        predictBtn.textContent = 'Memproses Data...';
+
+        document.getElementById('analysis-stat').textContent =
+            'Memproses';
+
+        resultPanel.classList.add('visible');
+        showMessage('Dataset sedang dikirim ke server untuk dianalisis.', 'success');
+
+        output.textContent =
+            'Menghubungi backend dan menjalankan prediksi...';
+
+        document.getElementById('result-label').textContent =
+            'Sedang diproses';
+
+        resultPanel.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+
+        const formData = new FormData();
+        formData.append('file', selectedFile);
+
+        try {
+            const response = await fetch(`${API_URL}/api/prediksi`, {
+                method: 'POST',
+                body: formData
+            });
+
+            const rawText = await response.text();
+
+            let result;
+
+            try {
+                result = JSON.parse(rawText);
+            } catch {
+                result = { response: rawText };
+            }
+
+            if (!response.ok) {
+                const detail = result.detail || result.message ||
+                    result.error || rawText || 'Terjadi kesalahan.';
+
+                throw new Error(
+                    typeof detail === 'string'
+                        ? detail
+                        : JSON.stringify(detail)
+                );
+            }
+
+            lastResult = result;
+
+            output.textContent = JSON.stringify(result, null, 2);
+
+            showMessage(
+                'Prediksi berhasil diproses. Periksa output untuk melihat hasil dari model.',
+                'success'
+            );
+
+            document.getElementById('analysis-stat').textContent =
+                'Selesai';
+
+            document.getElementById('result-label').textContent =
+                'Prediksi berhasil';
+
+        } catch (error) {
+            if (currentRequest !== requestNumber) return;
+
+            output.textContent = 'Analisis gagal.\n\n' + error.message;
+
+            showMessage(
+                'Gagal menjalankan prediksi. Pastikan backend aktif dan endpoint API dapat diakses.',
+                'error'
+            );
+
+            document.getElementById('analysis-stat').textContent =
+                'Gagal';
+
+            document.getElementById('result-label').textContent =
+                'Terjadi kesalahan';
+
+        } finally {
+            if (currentRequest === requestNumber) {
+                predictBtn.disabled = false;
+                predictBtn.textContent = 'Jalankan Prediksi  →';
+            }
+        }
+    }
+
+    // Menyalin output
+    document.getElementById('copy-btn').addEventListener('click', async () => {
+        try {
+            await navigator.clipboard.writeText(output.textContent);
+
+            document.getElementById('copy-btn').textContent = 'Tersalin!';
+
+            setTimeout(() => {
+                document.getElementById('copy-btn').textContent =
+                    'Salin Hasil';
+            }, 1500);
+
+        } catch {
+            alert('Tidak dapat menyalin hasil secara otomatis.');
+        }
+    });
+</script>
+</body>
+</html>
