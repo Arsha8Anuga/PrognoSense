@@ -1,0 +1,1444 @@
+{
+ "model_version": "v1",
+ "rasio": 50,
+ "ringkasan": {
+  "total": 102,
+  "rawat_sekarang": 2,
+  "per_tahap": {
+   "sehat": 36,
+   "menurun": 59,
+   "kritis": 7
+  },
+  "rata2_rul_pred": 67.0
+ },
+ "mesin": [
+  {
+   "unit": "FD002_203",
+   "siklus": 253,
+   "kondisi": 3,
+   "tahap": "menurun",
+   "rul_pred": 6.6,
+   "rul_aktual": 16,
+   "aksi": "rawat",
+   "terlambat": true,
+   "q": {
+    "lanjut": -10.01,
+    "rawat": -10.0
+   }
+  },
+  {
+   "unit": "FD002_220",
+   "siklus": 219,
+   "kondisi": 4,
+   "tahap": "menurun",
+   "rul_pred": 10.8,
+   "rul_aktual": 15,
+   "aksi": "rawat",
+   "terlambat": true,
+   "q": {
+    "lanjut": 8.15,
+    "rawat": -8.15
+   }
+  },
+  {
+   "unit": "FD002_117",
+   "siklus": 167,
+   "kondisi": 1,
+   "tahap": "menurun",
+   "rul_pred": 13.7,
+   "rul_aktual": 10,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 8.15,
+    "rawat": -8.15
+   }
+  },
+  {
+   "unit": "FD002_204",
+   "siklus": 214,
+   "kondisi": 0,
+   "tahap": "menurun",
+   "rul_pred": 16.4,
+   "rul_aktual": 23,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 8.15,
+    "rawat": -8.15
+   }
+  },
+  {
+   "unit": "FD004_89",
+   "siklus": 153,
+   "kondisi": 5,
+   "tahap": "menurun",
+   "rul_pred": 16.4,
+   "rul_aktual": 15,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 8.15,
+    "rawat": -8.15
+   }
+  },
+  {
+   "unit": "FD002_150",
+   "siklus": 204,
+   "kondisi": 5,
+   "tahap": "menurun",
+   "rul_pred": 17.6,
+   "rul_aktual": 18,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 8.15,
+    "rawat": -8.15
+   }
+  },
+  {
+   "unit": "FD004_192",
+   "siklus": 168,
+   "kondisi": 1,
+   "tahap": "menurun",
+   "rul_pred": 19.8,
+   "rul_aktual": 22,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 8.15,
+    "rawat": -8.15
+   }
+  },
+  {
+   "unit": "FD002_189",
+   "siklus": 183,
+   "kondisi": 3,
+   "tahap": "menurun",
+   "rul_pred": 20.6,
+   "rul_aktual": 26,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 22.33,
+    "rawat": -8.65
+   }
+  },
+  {
+   "unit": "FD004_93",
+   "siklus": 160,
+   "kondisi": 4,
+   "tahap": "menurun",
+   "rul_pred": 22.1,
+   "rul_aktual": 36,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 22.33,
+    "rawat": -8.65
+   }
+  },
+  {
+   "unit": "FD002_130",
+   "siklus": 156,
+   "kondisi": 3,
+   "tahap": "menurun",
+   "rul_pred": 22.5,
+   "rul_aktual": 26,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 22.33,
+    "rawat": -8.65
+   }
+  },
+  {
+   "unit": "FD004_88",
+   "siklus": 362,
+   "kondisi": 4,
+   "tahap": "kritis",
+   "rul_pred": 24.3,
+   "rul_aktual": 26,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 7.94,
+    "rawat": -4.1
+   }
+  },
+  {
+   "unit": "FD004_107",
+   "siklus": 156,
+   "kondisi": 4,
+   "tahap": "menurun",
+   "rul_pred": 25.9,
+   "rul_aktual": 27,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 22.33,
+    "rawat": -8.65
+   }
+  },
+  {
+   "unit": "FD002_208",
+   "siklus": 128,
+   "kondisi": 1,
+   "tahap": "menurun",
+   "rul_pred": 26.3,
+   "rul_aktual": 22,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 22.33,
+    "rawat": -8.65
+   }
+  },
+  {
+   "unit": "FD002_104",
+   "siklus": 203,
+   "kondisi": 2,
+   "tahap": "menurun",
+   "rul_pred": 26.6,
+   "rul_aktual": 25,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 22.33,
+    "rawat": -8.65
+   }
+  },
+  {
+   "unit": "FD004_211",
+   "siklus": 117,
+   "kondisi": 5,
+   "tahap": "menurun",
+   "rul_pred": 28.1,
+   "rul_aktual": 29,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 22.33,
+    "rawat": -8.65
+   }
+  },
+  {
+   "unit": "FD002_72",
+   "siklus": 159,
+   "kondisi": 1,
+   "tahap": "menurun",
+   "rul_pred": 28.9,
+   "rul_aktual": 37,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 22.33,
+    "rawat": -8.65
+   }
+  },
+  {
+   "unit": "FD004_22",
+   "siklus": 183,
+   "kondisi": 0,
+   "tahap": "menurun",
+   "rul_pred": 29.1,
+   "rul_aktual": 28,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 22.33,
+    "rawat": -8.65
+   }
+  },
+  {
+   "unit": "FD002_58",
+   "siklus": 140,
+   "kondisi": 0,
+   "tahap": "menurun",
+   "rul_pred": 29.3,
+   "rul_aktual": 22,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 22.33,
+    "rawat": -8.65
+   }
+  },
+  {
+   "unit": "FD004_103",
+   "siklus": 180,
+   "kondisi": 2,
+   "tahap": "menurun",
+   "rul_pred": 30.8,
+   "rul_aktual": 44,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 22.33,
+    "rawat": -8.65
+   }
+  },
+  {
+   "unit": "FD002_55",
+   "siklus": 140,
+   "kondisi": 4,
+   "tahap": "menurun",
+   "rul_pred": 30.9,
+   "rul_aktual": 19,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 22.33,
+    "rawat": -8.65
+   }
+  },
+  {
+   "unit": "FD002_192",
+   "siklus": 112,
+   "kondisi": 0,
+   "tahap": "menurun",
+   "rul_pred": 31.4,
+   "rul_aktual": 21,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 22.33,
+    "rawat": -8.65
+   }
+  },
+  {
+   "unit": "FD004_210",
+   "siklus": 143,
+   "kondisi": 3,
+   "tahap": "menurun",
+   "rul_pred": 31.4,
+   "rul_aktual": 24,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 22.33,
+    "rawat": -8.65
+   }
+  },
+  {
+   "unit": "FD002_49",
+   "siklus": 147,
+   "kondisi": 0,
+   "tahap": "menurun",
+   "rul_pred": 32.2,
+   "rul_aktual": 21,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 22.33,
+    "rawat": -8.65
+   }
+  },
+  {
+   "unit": "FD004_246",
+   "siklus": 114,
+   "kondisi": 5,
+   "tahap": "menurun",
+   "rul_pred": 34.4,
+   "rul_aktual": 47,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 22.33,
+    "rawat": -8.65
+   }
+  },
+  {
+   "unit": "FD002_100",
+   "siklus": 180,
+   "kondisi": 4,
+   "tahap": "menurun",
+   "rul_pred": 39.6,
+   "rul_aktual": 32,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 36.84,
+    "rawat": -9.11
+   }
+  },
+  {
+   "unit": "FD002_219",
+   "siklus": 126,
+   "kondisi": 1,
+   "tahap": "menurun",
+   "rul_pred": 42.4,
+   "rul_aktual": 30,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 36.84,
+    "rawat": -9.11
+   }
+  },
+  {
+   "unit": "FD002_152",
+   "siklus": 146,
+   "kondisi": 5,
+   "tahap": "menurun",
+   "rul_pred": 42.9,
+   "rul_aktual": 38,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 36.84,
+    "rawat": -9.11
+   }
+  },
+  {
+   "unit": "FD004_100",
+   "siklus": 223,
+   "kondisi": 4,
+   "tahap": "kritis",
+   "rul_pred": 44.2,
+   "rul_aktual": 38,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 11.48,
+    "rawat": -1.9
+   }
+  },
+  {
+   "unit": "FD002_175",
+   "siklus": 152,
+   "kondisi": 4,
+   "tahap": "menurun",
+   "rul_pred": 44.9,
+   "rul_aktual": 50,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 36.84,
+    "rawat": -9.11
+   }
+  },
+  {
+   "unit": "FD002_236",
+   "siklus": 171,
+   "kondisi": 4,
+   "tahap": "menurun",
+   "rul_pred": 47.6,
+   "rul_aktual": 68,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 36.84,
+    "rawat": -9.11
+   }
+  },
+  {
+   "unit": "FD004_242",
+   "siklus": 184,
+   "kondisi": 0,
+   "tahap": "menurun",
+   "rul_pred": 48.2,
+   "rul_aktual": 38,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 36.84,
+    "rawat": -9.11
+   }
+  },
+  {
+   "unit": "FD002_122",
+   "siklus": 156,
+   "kondisi": 1,
+   "tahap": "menurun",
+   "rul_pred": 49.5,
+   "rul_aktual": 29,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 36.84,
+    "rawat": -9.11
+   }
+  },
+  {
+   "unit": "FD002_22",
+   "siklus": 161,
+   "kondisi": 3,
+   "tahap": "menurun",
+   "rul_pred": 49.9,
+   "rul_aktual": 31,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 36.84,
+    "rawat": -9.11
+   }
+  },
+  {
+   "unit": "FD002_161",
+   "siklus": 157,
+   "kondisi": 3,
+   "tahap": "menurun",
+   "rul_pred": 51.3,
+   "rul_aktual": 67,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 56.24,
+    "rawat": -10.0
+   }
+  },
+  {
+   "unit": "FD002_260",
+   "siklus": 254,
+   "kondisi": 1,
+   "tahap": "menurun",
+   "rul_pred": 51.6,
+   "rul_aktual": 62,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 56.24,
+    "rawat": -10.0
+   }
+  },
+  {
+   "unit": "FD002_107",
+   "siklus": 119,
+   "kondisi": 2,
+   "tahap": "menurun",
+   "rul_pred": 51.8,
+   "rul_aktual": 26,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 56.24,
+    "rawat": -10.0
+   }
+  },
+  {
+   "unit": "FD004_152",
+   "siklus": 222,
+   "kondisi": 2,
+   "tahap": "menurun",
+   "rul_pred": 51.9,
+   "rul_aktual": 40,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 56.24,
+    "rawat": -10.0
+   }
+  },
+  {
+   "unit": "FD002_158",
+   "siklus": 269,
+   "kondisi": 1,
+   "tahap": "menurun",
+   "rul_pred": 52.8,
+   "rul_aktual": 39,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 56.24,
+    "rawat": -10.0
+   }
+  },
+  {
+   "unit": "FD004_51",
+   "siklus": 232,
+   "kondisi": 0,
+   "tahap": "kritis",
+   "rul_pred": 52.8,
+   "rul_aktual": 53,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 12.38,
+    "rawat": -1.0
+   }
+  },
+  {
+   "unit": "FD004_38",
+   "siklus": 129,
+   "kondisi": 5,
+   "tahap": "menurun",
+   "rul_pred": 53.0,
+   "rul_aktual": 48,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 56.24,
+    "rawat": -10.0
+   }
+  },
+  {
+   "unit": "FD004_158",
+   "siklus": 314,
+   "kondisi": 4,
+   "tahap": "kritis",
+   "rul_pred": 53.7,
+   "rul_aktual": 85,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 12.38,
+    "rawat": -1.0
+   }
+  },
+  {
+   "unit": "FD002_211",
+   "siklus": 152,
+   "kondisi": 3,
+   "tahap": "menurun",
+   "rul_pred": 58.2,
+   "rul_aktual": 62,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 56.24,
+    "rawat": -10.0
+   }
+  },
+  {
+   "unit": "FD004_150",
+   "siklus": 113,
+   "kondisi": 0,
+   "tahap": "menurun",
+   "rul_pred": 58.7,
+   "rul_aktual": 36,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 56.24,
+    "rawat": -10.0
+   }
+  },
+  {
+   "unit": "FD002_59",
+   "siklus": 131,
+   "kondisi": 3,
+   "tahap": "menurun",
+   "rul_pred": 59.2,
+   "rul_aktual": 63,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 56.24,
+    "rawat": -10.0
+   }
+  },
+  {
+   "unit": "FD004_21",
+   "siklus": 171,
+   "kondisi": 0,
+   "tahap": "kritis",
+   "rul_pred": 59.3,
+   "rul_aktual": 56,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 12.38,
+    "rawat": -1.0
+   }
+  },
+  {
+   "unit": "FD004_170",
+   "siklus": 122,
+   "kondisi": 1,
+   "tahap": "menurun",
+   "rul_pred": 60.2,
+   "rul_aktual": 39,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 56.24,
+    "rawat": -10.0
+   }
+  },
+  {
+   "unit": "FD004_189",
+   "siklus": 143,
+   "kondisi": 2,
+   "tahap": "menurun",
+   "rul_pred": 63.4,
+   "rul_aktual": 96,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 56.24,
+    "rawat": -10.0
+   }
+  },
+  {
+   "unit": "FD004_59",
+   "siklus": 139,
+   "kondisi": 3,
+   "tahap": "menurun",
+   "rul_pred": 64.1,
+   "rul_aktual": 38,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 56.24,
+    "rawat": -10.0
+   }
+  },
+  {
+   "unit": "FD004_208",
+   "siklus": 232,
+   "kondisi": 0,
+   "tahap": "menurun",
+   "rul_pred": 65.3,
+   "rul_aktual": 58,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 56.24,
+    "rawat": -10.0
+   }
+  },
+  {
+   "unit": "FD004_15",
+   "siklus": 160,
+   "kondisi": 3,
+   "tahap": "kritis",
+   "rul_pred": 66.3,
+   "rul_aktual": 64,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 12.38,
+    "rawat": -1.0
+   }
+  },
+  {
+   "unit": "FD004_104",
+   "siklus": 166,
+   "kondisi": 3,
+   "tahap": "sehat",
+   "rul_pred": 67.3,
+   "rul_aktual": 37,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 68.84,
+    "rawat": -7.18
+   }
+  },
+  {
+   "unit": "FD004_204",
+   "siklus": 133,
+   "kondisi": 0,
+   "tahap": "sehat",
+   "rul_pred": 67.8,
+   "rul_aktual": 78,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 68.84,
+    "rawat": -7.18
+   }
+  },
+  {
+   "unit": "FD004_131",
+   "siklus": 297,
+   "kondisi": 1,
+   "tahap": "sehat",
+   "rul_pred": 67.9,
+   "rul_aktual": 73,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 68.84,
+    "rawat": -7.18
+   }
+  },
+  {
+   "unit": "FD002_234",
+   "siklus": 107,
+   "kondisi": 2,
+   "tahap": "menurun",
+   "rul_pred": 72.6,
+   "rul_aktual": 52,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 56.24,
+    "rawat": -10.0
+   }
+  },
+  {
+   "unit": "FD002_2",
+   "siklus": 178,
+   "kondisi": 3,
+   "tahap": "menurun",
+   "rul_pred": 73.2,
+   "rul_aktual": 91,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 56.24,
+    "rawat": -10.0
+   }
+  },
+  {
+   "unit": "FD004_175",
+   "siklus": 100,
+   "kondisi": 0,
+   "tahap": "menurun",
+   "rul_pred": 73.3,
+   "rul_aktual": 56,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 56.24,
+    "rawat": -10.0
+   }
+  },
+  {
+   "unit": "FD004_188",
+   "siklus": 177,
+   "kondisi": 2,
+   "tahap": "menurun",
+   "rul_pred": 73.7,
+   "rul_aktual": 77,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 56.24,
+    "rawat": -10.0
+   }
+  },
+  {
+   "unit": "FD002_38",
+   "siklus": 124,
+   "kondisi": 0,
+   "tahap": "sehat",
+   "rul_pred": 76.2,
+   "rul_aktual": 53,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 68.84,
+    "rawat": -7.18
+   }
+  },
+  {
+   "unit": "FD002_51",
+   "siklus": 239,
+   "kondisi": 1,
+   "tahap": "menurun",
+   "rul_pred": 76.3,
+   "rul_aktual": 54,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 56.24,
+    "rawat": -10.0
+   }
+  },
+  {
+   "unit": "FD002_226",
+   "siklus": 116,
+   "kondisi": 5,
+   "tahap": "menurun",
+   "rul_pred": 78.0,
+   "rul_aktual": 62,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 56.24,
+    "rawat": -10.0
+   }
+  },
+  {
+   "unit": "FD004_108",
+   "siklus": 215,
+   "kondisi": 3,
+   "tahap": "sehat",
+   "rul_pred": 78.0,
+   "rul_aktual": 89,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 68.84,
+    "rawat": -7.18
+   }
+  },
+  {
+   "unit": "FD002_252",
+   "siklus": 97,
+   "kondisi": 2,
+   "tahap": "sehat",
+   "rul_pred": 80.7,
+   "rul_aktual": 38,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 88.63,
+    "rawat": -10.0
+   }
+  },
+  {
+   "unit": "FD002_75",
+   "siklus": 131,
+   "kondisi": 4,
+   "tahap": "menurun",
+   "rul_pred": 81.3,
+   "rul_aktual": 100,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 71.44,
+    "rawat": -10.0
+   }
+  },
+  {
+   "unit": "FD004_117",
+   "siklus": 259,
+   "kondisi": 5,
+   "tahap": "kritis",
+   "rul_pred": 82.3,
+   "rul_aktual": 83,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 5.11,
+    "rawat": 0.0
+   }
+  },
+  {
+   "unit": "FD004_64",
+   "siklus": 122,
+   "kondisi": 2,
+   "tahap": "menurun",
+   "rul_pred": 82.8,
+   "rul_aktual": 62,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 71.44,
+    "rawat": -10.0
+   }
+  },
+  {
+   "unit": "FD004_221",
+   "siklus": 158,
+   "kondisi": 5,
+   "tahap": "sehat",
+   "rul_pred": 83.1,
+   "rul_aktual": 116,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 88.63,
+    "rawat": -10.0
+   }
+  },
+  {
+   "unit": "FD002_64",
+   "siklus": 178,
+   "kondisi": 0,
+   "tahap": "sehat",
+   "rul_pred": 83.5,
+   "rul_aktual": 104,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 88.63,
+    "rawat": -10.0
+   }
+  },
+  {
+   "unit": "FD004_75",
+   "siklus": 128,
+   "kondisi": 2,
+   "tahap": "menurun",
+   "rul_pred": 83.5,
+   "rul_aktual": 102,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 71.44,
+    "rawat": -10.0
+   }
+  },
+  {
+   "unit": "FD002_108",
+   "siklus": 85,
+   "kondisi": 1,
+   "tahap": "menurun",
+   "rul_pred": 85.2,
+   "rul_aktual": 71,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 71.44,
+    "rawat": -10.0
+   }
+  },
+  {
+   "unit": "FD004_203",
+   "siklus": 171,
+   "kondisi": 1,
+   "tahap": "sehat",
+   "rul_pred": 88.2,
+   "rul_aktual": 153,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 88.63,
+    "rawat": -10.0
+   }
+  },
+  {
+   "unit": "FD002_170",
+   "siklus": 108,
+   "kondisi": 2,
+   "tahap": "menurun",
+   "rul_pred": 88.5,
+   "rul_aktual": 71,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 71.44,
+    "rawat": -10.0
+   }
+  },
+  {
+   "unit": "FD004_2",
+   "siklus": 181,
+   "kondisi": 2,
+   "tahap": "sehat",
+   "rul_pred": 91.5,
+   "rul_aktual": 118,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 88.63,
+    "rawat": -10.0
+   }
+  },
+  {
+   "unit": "FD002_218",
+   "siklus": 135,
+   "kondisi": 1,
+   "tahap": "menurun",
+   "rul_pred": 93.1,
+   "rul_aktual": 102,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 71.44,
+    "rawat": -10.0
+   }
+  },
+  {
+   "unit": "FD004_72",
+   "siklus": 167,
+   "kondisi": 4,
+   "tahap": "sehat",
+   "rul_pred": 93.7,
+   "rul_aktual": 141,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 88.63,
+    "rawat": -10.0
+   }
+  },
+  {
+   "unit": "FD002_103",
+   "siklus": 196,
+   "kondisi": 2,
+   "tahap": "sehat",
+   "rul_pred": 93.9,
+   "rul_aktual": 84,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 88.63,
+    "rawat": -10.0
+   }
+  },
+  {
+   "unit": "FD004_161",
+   "siklus": 227,
+   "kondisi": 3,
+   "tahap": "sehat",
+   "rul_pred": 94.0,
+   "rul_aktual": 76,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 88.63,
+    "rawat": -10.0
+   }
+  },
+  {
+   "unit": "FD004_207",
+   "siklus": 240,
+   "kondisi": 1,
+   "tahap": "sehat",
+   "rul_pred": 94.1,
+   "rul_aktual": 139,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 88.63,
+    "rawat": -10.0
+   }
+  },
+  {
+   "unit": "FD002_131",
+   "siklus": 157,
+   "kondisi": 2,
+   "tahap": "sehat",
+   "rul_pred": 94.2,
+   "rul_aktual": 123,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 88.63,
+    "rawat": -10.0
+   }
+  },
+  {
+   "unit": "FD004_122",
+   "siklus": 98,
+   "kondisi": 2,
+   "tahap": "sehat",
+   "rul_pred": 95.3,
+   "rul_aktual": 76,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 88.63,
+    "rawat": -10.0
+   }
+  },
+  {
+   "unit": "FD002_15",
+   "siklus": 140,
+   "kondisi": 5,
+   "tahap": "sehat",
+   "rul_pred": 95.6,
+   "rul_aktual": 69,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 88.63,
+    "rawat": -10.0
+   }
+  },
+  {
+   "unit": "FD002_190",
+   "siklus": 202,
+   "kondisi": 5,
+   "tahap": "menurun",
+   "rul_pred": 95.8,
+   "rul_aktual": 55,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 71.44,
+    "rawat": -10.0
+   }
+  },
+  {
+   "unit": "FD002_89",
+   "siklus": 95,
+   "kondisi": 2,
+   "tahap": "sehat",
+   "rul_pred": 96.2,
+   "rul_aktual": 93,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 88.63,
+    "rawat": -10.0
+   }
+  },
+  {
+   "unit": "FD002_256",
+   "siklus": 99,
+   "kondisi": 1,
+   "tahap": "sehat",
+   "rul_pred": 97.7,
+   "rul_aktual": 64,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 88.63,
+    "rawat": -10.0
+   }
+  },
+  {
+   "unit": "FD002_249",
+   "siklus": 113,
+   "kondisi": 3,
+   "tahap": "sehat",
+   "rul_pred": 97.9,
+   "rul_aktual": 89,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 88.63,
+    "rawat": -10.0
+   }
+  },
+  {
+   "unit": "FD002_135",
+   "siklus": 207,
+   "kondisi": 1,
+   "tahap": "menurun",
+   "rul_pred": 99.3,
+   "rul_aktual": 87,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 71.44,
+    "rawat": -10.0
+   }
+  },
+  {
+   "unit": "FD004_55",
+   "siklus": 231,
+   "kondisi": 3,
+   "tahap": "menurun",
+   "rul_pred": 101.6,
+   "rul_aktual": 113,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 71.44,
+    "rawat": -10.0
+   }
+  },
+  {
+   "unit": "FD002_188",
+   "siklus": 79,
+   "kondisi": 5,
+   "tahap": "sehat",
+   "rul_pred": 104.0,
+   "rul_aktual": 69,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 88.63,
+    "rawat": -10.0
+   }
+  },
+  {
+   "unit": "FD004_230",
+   "siklus": 128,
+   "kondisi": 1,
+   "tahap": "sehat",
+   "rul_pred": 105.0,
+   "rul_aktual": 122,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 88.63,
+    "rawat": -10.0
+   }
+  },
+  {
+   "unit": "FD002_21",
+   "siklus": 112,
+   "kondisi": 4,
+   "tahap": "sehat",
+   "rul_pred": 106.7,
+   "rul_aktual": 77,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 88.63,
+    "rawat": -10.0
+   }
+  },
+  {
+   "unit": "FD002_244",
+   "siklus": 75,
+   "kondisi": 2,
+   "tahap": "sehat",
+   "rul_pred": 107.7,
+   "rul_aktual": 53,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 88.63,
+    "rawat": -10.0
+   }
+  },
+  {
+   "unit": "FD002_215",
+   "siklus": 118,
+   "kondisi": 0,
+   "tahap": "sehat",
+   "rul_pred": 110.2,
+   "rul_aktual": 108,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 88.63,
+    "rawat": -10.0
+   }
+  },
+  {
+   "unit": "FD004_130",
+   "siklus": 92,
+   "kondisi": 1,
+   "tahap": "sehat",
+   "rul_pred": 110.4,
+   "rul_aktual": 74,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 88.63,
+    "rawat": -10.0
+   }
+  },
+  {
+   "unit": "FD004_180",
+   "siklus": 177,
+   "kondisi": 1,
+   "tahap": "sehat",
+   "rul_pred": 111.0,
+   "rul_aktual": 167,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 88.63,
+    "rawat": -10.0
+   }
+  },
+  {
+   "unit": "FD002_53",
+   "siklus": 95,
+   "kondisi": 3,
+   "tahap": "sehat",
+   "rul_pred": 111.3,
+   "rul_aktual": 53,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 88.63,
+    "rawat": -10.0
+   }
+  },
+  {
+   "unit": "FD004_235",
+   "siklus": 108,
+   "kondisi": 0,
+   "tahap": "sehat",
+   "rul_pred": 111.5,
+   "rul_aktual": 91,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 88.63,
+    "rawat": -10.0
+   }
+  },
+  {
+   "unit": "FD004_249",
+   "siklus": 147,
+   "kondisi": 1,
+   "tahap": "sehat",
+   "rul_pred": 113.2,
+   "rul_aktual": 108,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 88.63,
+    "rawat": -10.0
+   }
+  },
+  {
+   "unit": "FD004_58",
+   "siklus": 179,
+   "kondisi": 1,
+   "tahap": "sehat",
+   "rul_pred": 115.2,
+   "rul_aktual": 102,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 88.63,
+    "rawat": -10.0
+   }
+  },
+  {
+   "unit": "FD002_88",
+   "siklus": 216,
+   "kondisi": 3,
+   "tahap": "sehat",
+   "rul_pred": 115.5,
+   "rul_aktual": 149,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 88.63,
+    "rawat": -10.0
+   }
+  },
+  {
+   "unit": "FD004_215",
+   "siklus": 247,
+   "kondisi": 5,
+   "tahap": "sehat",
+   "rul_pred": 115.8,
+   "rul_aktual": 114,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 88.63,
+    "rawat": -10.0
+   }
+  },
+  {
+   "unit": "FD004_53",
+   "siklus": 214,
+   "kondisi": 5,
+   "tahap": "sehat",
+   "rul_pred": 117.4,
+   "rul_aktual": 90,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 88.63,
+    "rawat": -10.0
+   }
+  },
+  {
+   "unit": "FD004_49",
+   "siklus": 254,
+   "kondisi": 3,
+   "tahap": "sehat",
+   "rul_pred": 118.3,
+   "rul_aktual": 192,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 88.63,
+    "rawat": -10.0
+   }
+  },
+  {
+   "unit": "FD004_190",
+   "siklus": 261,
+   "kondisi": 4,
+   "tahap": "sehat",
+   "rul_pred": 121.7,
+   "rul_aktual": 120,
+   "aksi": "lanjut",
+   "terlambat": false,
+   "q": {
+    "lanjut": 88.63,
+    "rawat": -10.0
+   }
+  }
+ ]
+}

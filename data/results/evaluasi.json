@@ -2176,9 +2176,331 @@
   ]
  },
  "rl": {
-  "kurva_reward": [],
-  "policy": [],
+  "kurva_reward": [
+   {
+    "episode": 100,
+    "rata2": -8.83
+   },
+   {
+    "episode": 200,
+    "rata2": -8.9
+   },
+   {
+    "episode": 300,
+    "rata2": -8.29
+   },
+   {
+    "episode": 400,
+    "rata2": -8.1
+   },
+   {
+    "episode": 500,
+    "rata2": -7.66
+   },
+   {
+    "episode": 600,
+    "rata2": -7.95
+   },
+   {
+    "episode": 700,
+    "rata2": -7.23
+   },
+   {
+    "episode": 800,
+    "rata2": -6.97
+   },
+   {
+    "episode": 900,
+    "rata2": -6.44
+   },
+   {
+    "episode": 1000,
+    "rata2": -5.92
+   },
+   {
+    "episode": 1100,
+    "rata2": -6.65
+   },
+   {
+    "episode": 1200,
+    "rata2": -5.65
+   },
+   {
+    "episode": 1300,
+    "rata2": -4.87
+   },
+   {
+    "episode": 1400,
+    "rata2": -2.74
+   },
+   {
+    "episode": 1500,
+    "rata2": -1.81
+   },
+   {
+    "episode": 1600,
+    "rata2": -2.33
+   },
+   {
+    "episode": 1700,
+    "rata2": -2.79
+   },
+   {
+    "episode": 1800,
+    "rata2": 0.78
+   },
+   {
+    "episode": 1900,
+    "rata2": 0.2
+   },
+   {
+    "episode": 2000,
+    "rata2": 0.68
+   },
+   {
+    "episode": 2100,
+    "rata2": 4.61
+   },
+   {
+    "episode": 2200,
+    "rata2": 2.44
+   },
+   {
+    "episode": 2300,
+    "rata2": 6.07
+   },
+   {
+    "episode": 2400,
+    "rata2": 4.59
+   },
+   {
+    "episode": 2500,
+    "rata2": 10.05
+   },
+   {
+    "episode": 2600,
+    "rata2": 10.14
+   },
+   {
+    "episode": 2700,
+    "rata2": 18.78
+   },
+   {
+    "episode": 2800,
+    "rata2": 16.97
+   },
+   {
+    "episode": 2900,
+    "rata2": 19.41
+   },
+   {
+    "episode": 3000,
+    "rata2": 26.02
+   },
+   {
+    "episode": 3100,
+    "rata2": 23.07
+   },
+   {
+    "episode": 3200,
+    "rata2": 28.52
+   },
+   {
+    "episode": 3300,
+    "rata2": 29.92
+   },
+   {
+    "episode": 3400,
+    "rata2": 27.75
+   },
+   {
+    "episode": 3500,
+    "rata2": 32.8
+   },
+   {
+    "episode": 3600,
+    "rata2": 43.31
+   },
+   {
+    "episode": 3700,
+    "rata2": 41.72
+   },
+   {
+    "episode": 3800,
+    "rata2": 50.12
+   },
+   {
+    "episode": 3900,
+    "rata2": 51.9
+   },
+   {
+    "episode": 4000,
+    "rata2": 42.98
+   },
+   {
+    "episode": 4100,
+    "rata2": 55.37
+   },
+   {
+    "episode": 4200,
+    "rata2": 51.56
+   },
+   {
+    "episode": 4300,
+    "rata2": 55.25
+   },
+   {
+    "episode": 4400,
+    "rata2": 81.8
+   },
+   {
+    "episode": 4500,
+    "rata2": 73.68
+   },
+   {
+    "episode": 4600,
+    "rata2": 70.86
+   },
+   {
+    "episode": 4700,
+    "rata2": 69.63
+   },
+   {
+    "episode": 4800,
+    "rata2": 80.03
+   },
+   {
+    "episode": 4900,
+    "rata2": 75.15
+   },
+   {
+    "episode": 5000,
+    "rata2": 76.86
+   }
+  ],
+  "policy": [
+   {
+    "state": "<10 · sehat",
+    "aksi": "lanjut",
+    "q_lanjut": 0.0,
+    "q_rawat": 0.0
+   },
+   {
+    "state": "<10 · menurun",
+    "aksi": "rawat",
+    "q_lanjut": -15.24,
+    "q_rawat": -10.0
+   },
+   {
+    "state": "<10 · kritis",
+    "aksi": "lanjut",
+    "q_lanjut": 0.57,
+    "q_rawat": 0.0
+   },
+   {
+    "state": "10-19 · sehat",
+    "aksi": "lanjut",
+    "q_lanjut": 0.0,
+    "q_rawat": 0.0
+   },
+   {
+    "state": "10-19 · menurun",
+    "aksi": "lanjut",
+    "q_lanjut": 8.16,
+    "q_rawat": -8.15
+   },
+   {
+    "state": "10-19 · kritis",
+    "aksi": "rawat",
+    "q_lanjut": -8.78,
+    "q_rawat": -8.33
+   },
+   {
+    "state": "20-34 · sehat",
+    "aksi": "lanjut",
+    "q_lanjut": 2.12,
+    "q_rawat": 0.0
+   },
+   {
+    "state": "20-34 · menurun",
+    "aksi": "lanjut",
+    "q_lanjut": 22.34,
+    "q_rawat": -8.65
+   },
+   {
+    "state": "20-34 · kritis",
+    "aksi": "lanjut",
+    "q_lanjut": 6.75,
+    "q_rawat": -4.1
+   },
+   {
+    "state": "35-49 · sehat",
+    "aksi": "lanjut",
+    "q_lanjut": 47.9,
+    "q_rawat": 0.0
+   },
+   {
+    "state": "35-49 · menurun",
+    "aksi": "lanjut",
+    "q_lanjut": 36.87,
+    "q_rawat": -9.11
+   },
+   {
+    "state": "35-49 · kritis",
+    "aksi": "lanjut",
+    "q_lanjut": 12.44,
+    "q_rawat": -1.9
+   },
+   {
+    "state": "50-79 · sehat",
+    "aksi": "lanjut",
+    "q_lanjut": 69.19,
+    "q_rawat": -7.18
+   },
+   {
+    "state": "50-79 · menurun",
+    "aksi": "lanjut",
+    "q_lanjut": 56.28,
+    "q_rawat": -10.0
+   },
+   {
+    "state": "50-79 · kritis",
+    "aksi": "lanjut",
+    "q_lanjut": 14.86,
+    "q_rawat": -1.0
+   },
+   {
+    "state": ">=80 · sehat",
+    "aksi": "lanjut",
+    "q_lanjut": 88.72,
+    "q_rawat": -10.0
+   },
+   {
+    "state": ">=80 · menurun",
+    "aksi": "lanjut",
+    "q_lanjut": 71.49,
+    "q_rawat": -10.0
+   },
+   {
+    "state": ">=80 · kritis",
+    "aksi": "lanjut",
+    "q_lanjut": 5.83,
+    "q_rawat": 0.0
+   }
+  ],
   "strategi": [
+   {
+    "nama": "Agen Q-Learning",
+    "rasio": 50,
+    "parameter": {},
+    "gagal_pct": 4.9,
+    "siklus_terbuang": 9.77,
+    "siklus_produktif": 221.3,
+    "biaya": 1220,
+    "n_mesin": 102,
+    "n_rawat": 97,
+    "n_gagal": 5
+   },
    {
     "nama": "Ambang RUL",
     "rasio": 50,
@@ -2232,6 +2554,18 @@
     "n_gagal": 0
    },
    {
+    "nama": "Agen Q-Learning",
+    "rasio": 100,
+    "parameter": {},
+    "gagal_pct": 0.98,
+    "siklus_terbuang": 11.8,
+    "siklus_produktif": 218.91,
+    "biaya": 1110,
+    "n_mesin": 102,
+    "n_rawat": 101,
+    "n_gagal": 1
+   },
+   {
     "nama": "Ambang RUL",
     "rasio": 100,
     "parameter": {
@@ -2282,6 +2616,18 @@
     "n_mesin": 102,
     "n_rawat": 102,
     "n_gagal": 0
+   },
+   {
+    "nama": "Agen Q-Learning",
+    "rasio": 200,
+    "parameter": {},
+    "gagal_pct": 0.98,
+    "siklus_terbuang": 11.8,
+    "siklus_produktif": 218.91,
+    "biaya": 1210,
+    "n_mesin": 102,
+    "n_rawat": 101,
+    "n_gagal": 1
    },
    {
     "nama": "Ambang RUL",
